@@ -1,0 +1,101 @@
+{
+  "data": [
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "marca": "Ferrari"
+      }
+    },
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "marca": "Ferrari"
+      }
+    },
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "marca": "Ferrari"
+      }
+    },
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "marca": "Ferrari"
+      }
+    },
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "nombre_Marca": "Ferrari"
+      }
+    },
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "marca": "Ferrari"
+      }
+    },
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "marca": "Ferrari"
+      }
+    },
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "marca": "Ferrari"
+      }
+    },
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "marca": "Ferrari"
+      }
+    },
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "marca": "Ferrari"
+      }
+    },
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "marca": "Ferrari"
+      }
+    },
+    {
+      "id_Modelo": 1,
+      "Modelo": "Modelo 1",
+      "id_Marca": {
+        "id_Marca": 1,
+        "marca": "Ferrari"
+      }
+    }
+
+  ]
+}

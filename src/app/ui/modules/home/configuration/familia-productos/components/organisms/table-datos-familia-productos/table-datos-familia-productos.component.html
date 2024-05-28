@@ -1,0 +1,37 @@
+<table class="table table-striped table-inverse table-responsive">
+  <thead class="thead-inverse">
+    <tr>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'N°'"
+        />
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Familia'"
+        />
+      </th>
+      <th >Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor=" let item of dataFamiliaProductos" >
+
+      <td scope="row">{{item.id_Familia}}</td>
+      <td>{{item.familia}}</td>
+      <td>
+        <button (click)="getById(item.id_Familia)" class="btn-option-table btn-editar">
+          <i class="uil uil-pen"></i>
+        </button>
+      </td>
+      <td>
+        <button class="btn-option-table btn-eliminar">
+          <i class="uil uil-trash"></i>
+        </button>
+      </td>
+
+  </tbody>
+</table>
+

@@ -1,0 +1,78 @@
+<table class="table table-striped table-inverse table-responsive">
+  <thead class="thead-inverse">
+    <tr>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'N°'"
+        />
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Cliente'"
+        />
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Auto'"
+        />
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Empleados'"
+        />
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Servicios'"
+        />
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Producto'"
+        />
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Precio total'"
+        />
+      </th>
+      <th >Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor=" let item of dataReparacion | orderListReparacion : optionSort.property : optionSort.order; index as i">
+
+      <td scope="row">{{i}}</td>
+      <td>{{item.id_Orden_Ingreso_Fk.id_Auto_Fk.idClienteFk.razon_Social}}</td>
+      <td>{{item.id_Orden_Ingreso_Fk.id_Auto_Fk.matricula}}</td>
+      <td>
+        <div *ngFor="let empleado of item.listaEmpleado" class="empleado-item">
+          <h4>- {{empleado.id_Empleado_Fk.nombres}} {{empleado.id_Empleado_Fk.apellidos}}</h4>
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let servicio of item.listaServicio" class="servicio-item">
+          <h4>- {{servicio.detalle_Servicio}}</h4>
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let producto of item.listaServicio" class="producto-item">
+          <h4>- {{producto.id_Producto_Fk.nombre}}</h4>
+        </div>
+      </td>
+      <td>S/{{item.costo_Total}}</td>
+      <td>
+        <button (click)="getById(item.id_Servicio)" class="btn-option-table btn-editar">
+          <i class="uil uil-pen"></i>
+        </button>
+      </td>
+      <td>
+        <button class="btn-option-table btn-eliminar">
+          <i class="uil uil-trash"></i>
+        </button>
+      </td>
+
+  </tbody>
+</table>

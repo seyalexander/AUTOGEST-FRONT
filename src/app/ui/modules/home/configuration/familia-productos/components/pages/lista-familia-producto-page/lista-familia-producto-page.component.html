@@ -1,0 +1,20 @@
+<article>
+  <!-- <div class="modal-registro" *ngIf="showRegistro">
+    <app-registro-datos-marcas-autos
+      (cerrarComponenteEvent)="mostrarComponente()"
+    />
+  </div> -->
+  <header>
+    <app-header-pages-configuration [nombrePagina]="nombrePagina"
+    (cerrarComponenteEvent)="mostrarComponente()"/>
+  </header>
+  <main>
+    <div class="bg-container-body">
+      <div class="container-body">
+        <app-table-datos-familia-productos [dataFamiliaProductos]="datosFamiliaProductoslista" />
+      </div>
+    </div>
+  </main>
+</article>
+
+

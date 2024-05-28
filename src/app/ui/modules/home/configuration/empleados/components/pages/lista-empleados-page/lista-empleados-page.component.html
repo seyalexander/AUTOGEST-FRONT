@@ -1,0 +1,25 @@
+<article>
+
+  <div class="modal-update" *ngIf="showUpdate">
+    <app-actualizar-empleados-page
+      (cerrarComponenteUpdateEvent)="updateComponente()"
+    />
+  </div>
+
+  <div class="modal-registro" *ngIf="showRegistro">
+    <app-registro-datos-empleados-page
+      (cerrarComponenteEvent)="mostrarComponente()"
+    />
+  </div>
+  <header>
+    <app-header-pages-configuration [nombrePagina]="nombrePagina"
+    (cerrarComponenteEvent)="mostrarComponente()" />
+  </header>
+  <main>
+    <div class="bg-container-body">
+      <div class="container-body">
+        <app-table-datos-empleados [dataEmpleados]="datosEmpleadoslista"/>
+      </div>
+    </div>
+  </main>
+</article>

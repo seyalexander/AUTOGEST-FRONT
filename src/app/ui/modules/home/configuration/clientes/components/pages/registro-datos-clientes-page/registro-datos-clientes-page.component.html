@@ -1,0 +1,119 @@
+<article class="container-registrar">
+
+  <div class="parte-superior">
+    <h2>REGISTRAR CLIENTES</h2>
+    <button (click)="cerrarComponente()">
+      <i class="uil uil-multiply"></i>
+    </button>
+  </div>
+
+  <div class="parte-inferior">
+
+    <form (ngSubmit)="sendClientes()" [formGroup]="formularioRegistro">
+      <div class="container-grupos">
+
+
+        <div class="grupo-inputs">
+
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="descripcionRazonSocial">RUC*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="ruc"
+              type="text"
+              id="ruc"
+              name="ruc"
+              placeholder="Registrar RUC"
+              required
+              [(ngModel)]="Clientes.ruc"
+            />
+            <div class="validacion-input" *ngIf="formularioRegistro.get('ruc')?.hasError('onlyNumbers')">
+              <div class="triangle"></div>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeTipoDeCaracteres"/>
+            </div>
+            <div class="validacion-input" *ngIf="formularioRegistro.get('ruc')?.hasError('maxLengthExceeded')">
+              <div class="triangle"></div>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresRuc"/>
+            </div>
+          </div>
+
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="descripcionRazonSocial">Razón Social*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="razonSocial"
+              type="text"
+              id="descripcionRazonSocial"
+              name="razonSocial"
+              placeholder="Registrar razón social"
+              required
+              [(ngModel)]="Clientes.razon_Social"
+            />
+            <div class="validacion-input" *ngIf="formularioRegistro.get('razonSocial')?.hasError('maxLengthExceeded')">
+              <div class="triangle"></div>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresRazonSocial"/>
+            </div>
+          </div>
+
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="descripcionRazonSocial">Representante legal*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="representante_Legal"
+              type="text"
+              id="representante_Legal"
+              name="representante_Legal"
+              placeholder="Registrar Representante legal"
+              required
+              [(ngModel)]="Clientes.representante_Legal"
+            />
+            <div class="validacion-input" *ngIf="formularioRegistro.get('representante_Legal')?.hasError('maxLengthExceeded')">
+              <div class="triangle"></div>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresRepresetnmanteLegal"/>
+            </div>
+          </div>
+
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="descripcionRazonSocial">Teléfono*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="telefono"
+              type="text"
+              id="telefono"
+              name="telefono"
+              placeholder="Registrar telefono"
+              required
+              [(ngModel)]="Clientes.telefono"
+            />
+            <div class="validacion-input" *ngIf="formularioRegistro.get('telefono')?.hasError('onlyNumbers')">
+              <div class="triangle"></div>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeTipoDeCaracteres" />
+            </div>
+            <div class="validacion-input" *ngIf="formularioRegistro.get('telefono')?.hasError('maxLengthExceeded')">
+              <div class="triangle"></div>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresTelefono" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="opciones-form">
+        <button
+          class="btn btn-success"
+          role="button"
+          [disabled]="!formularioRegistro.valid"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</article>

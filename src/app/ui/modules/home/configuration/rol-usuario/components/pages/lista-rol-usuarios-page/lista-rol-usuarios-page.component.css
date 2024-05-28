@@ -1,0 +1,41 @@
+article {
+  height: 100%;
+  padding: 12px 24px;
+  box-sizing: border-box;
+}
+
+
+main {
+  margin-top: 12px;
+}
+
+.bg-container-body {
+  width: auto;
+  max-height: 30rem;
+  overflow: hidden;
+}
+
+.container-body {
+  width: auto;
+  max-height: 450px;
+  overflow-y: scroll;
+  border-radius: 5px;
+  border: 1px solid rgba(10, 180, 209, 0.3);
+}
+
+.container-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container-body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container-body::-webkit-scrollbar-thumb {
+  background-color: #0AB4D1;
+  border-radius: 4px;
+}
+
+.container-body::-webkit-scrollbar-thumb:hover {
+  background-color: #1092a8;
+}

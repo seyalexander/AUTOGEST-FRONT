@@ -1,0 +1,69 @@
+<article class="container-registrar">
+  <div class="parte-superior">
+    <h2>ACTUALIZAR MORDELO AUTO</h2>
+    <button (click)="cerrarComponente()">
+      <i class="uil uil-x"></i>
+    </button>
+  </div>
+  <div class="parte-inferior">
+    <form (ngSubmit)="updateMarcaAuto()" [formGroup]="formularioRegistro">
+      <div class="container-grupos">
+        <div class="grupo-inputs">
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="idMarcaAutos">Id*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="idMarcaAutos"
+              type="text"
+              id="idMarcaAutos"
+              name="idMarcaAutos"
+              placeholder="Registrar modelo"
+              [(ngModel)]="modeloAutos.id_Modelo"
+              readonly
+            />
+          </div>
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="modeloAutos">Modelo*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="modeloAutos"
+              type="text"
+              id="modeloAutos"
+              name="modeloAutos"
+              placeholder="Registrar modelo"
+              required
+              [(ngModel)]="modeloAutos.modelo"
+            />
+          </div>
+        </div>
+
+        <div class="grupo-inputs">
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="dbMarcaAuto">Seleccionar marca*:</label>
+            </div>
+            <select formControlName="modeloAutoDb" [(ngModel)]="modeloAuto.idMarcaFK.marca"  name="demo" id="#">
+              <option selected="selected" value="">{{modeloAutos.idMarcaFK.marca}}</option>
+              <!-- <option  *ngFor="let item of datosMarcaAutoslista" [value]="item.id_Marca">{{item.marca}}</option> -->
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="opciones-form">
+        <button
+          class="btn btn-success"
+          role="button"
+          [disabled]="!formularioRegistro.valid"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</article>
+

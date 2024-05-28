@@ -1,0 +1,67 @@
+{
+  "data": [
+    {
+      "Id_Usuario": 1,
+      "Usuario": "DAVISJADMIN",
+      "Clave": "ADMIN123",
+      "Estado": 1,
+      "Id_Rol_Usuario_Fk": {
+        "Id_Rol_Usuario": 1,
+        "Descripcion_Rol": "Administrador"
+      },
+      "Id_Empleado_Fk": {
+        "Id_Empleado": 1,
+        "Nombres": "Claduio Paul",
+        "Apellidos": "Cruzado Ezquivel",
+        "Id_Tipo_Documento_Fk": {
+          "id_Tipo_Documento": 1,
+          "tipo_Documento": "DNI"
+        },
+        "Numero_Documento": "95845235",
+        "Telefono": "985425352"
+      }
+    },
+    {
+      "Id_Usuario": 2,
+      "Usuario": "DAVISJADMIN",
+      "Clave": "ADMIN123",
+      "Estado": 1,
+      "Id_Rol_Usuario_Fk": {
+        "Id_Rol_Usuario": 1,
+        "Descripcion_Rol": "Administrador"
+      },
+      "Id_Empleado_Fk": {
+        "Id_Empleado": 1,
+        "Nombres": "Claduio Paul",
+        "Apellidos": "Cruzado Ezquivel",
+        "Id_Tipo_Documento_Fk": {
+          "id_Tipo_Documento": 1,
+          "tipo_Documento": "DNI"
+        },
+        "Numero_Documento": "95845235",
+        "Telefono": "985425352"
+      }
+    },
+    {
+      "Id_Usuario": 3,
+      "Usuario": "DAVISJADMIN",
+      "Clave": "ADMIN123",
+      "Estado": 1,
+      "Id_Rol_Usuario_Fk": {
+        "Id_Rol_Usuario": 1,
+        "Descripcion_Rol": "Administrador"
+      },
+      "Id_Empleado_Fk": {
+        "Id_Empleado": 1,
+        "Nombres": "Claduio Paul",
+        "Apellidos": "Cruzado Ezquivel",
+        "Id_Tipo_Documento_Fk": {
+          "id_Tipo_Documento": 1,
+          "tipo_Documento": "DNI"
+        },
+        "Numero_Documento": "95845235",
+        "Telefono": "985425352"
+      }
+    }
+  ]
+}

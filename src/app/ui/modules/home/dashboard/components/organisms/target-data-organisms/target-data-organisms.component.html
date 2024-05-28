@@ -1,0 +1,12 @@
+<article [class]="{'target-principal-1':mode =='principal-1',
+  'target-principal-2':mode =='principal-2',
+  'target-principal-3':mode =='principal-3',
+  'target-principal-4':mode =='principal-4'}">
+  <div class="bg-icono">
+    <i [class]="iconoTarget"></i>
+  </div>
+  <div class="bg-informacion">
+    <span>{{titleTarget}}</span>
+    <span>{{cantidadTarget}}</span>
+  </div>
+</article>

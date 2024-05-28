@@ -1,0 +1,20 @@
+<article *ngIf="userLoginOn">
+  <div class="modal-registro" *ngIf="showRegistro">
+    <app-registro-datos-autos-page
+      (cerrarComponenteEvent)="mostrarComponente()"
+    />
+  </div>
+  <header>
+    <app-header-pages-configuration [nombrePagina]="nombrePagina"
+    (cerrarComponenteEvent)="mostrarComponente()"/>
+  </header>
+  <main>
+    <div class="bg-container-body">
+      <div class="container-body">
+        <app-table-datos-autos [dataAutos]="datosAutoslista"/>
+      </div>
+    </div>
+  </main>
+  <p *ngIf="!userLoginOn" class="alert alert-danger">Usuario NO autenticado</p>
+</article>
+

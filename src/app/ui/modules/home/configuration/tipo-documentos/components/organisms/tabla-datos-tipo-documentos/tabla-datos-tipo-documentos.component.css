@@ -1,0 +1,107 @@
+table{
+  border-spacing: 0px;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  background-color: white;
+}
+
+thead {
+  height: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #0AB4D1;
+  color: white;
+}
+
+tbody {
+  display: block;
+  height: 100%;
+}
+
+tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  transition: all 0.3s ease;
+}
+
+th:hover {
+  cursor: pointer;
+  background-color: #0b8ea5;
+}
+
+th, td {
+  width: auto;
+  padding: 4px;
+  text-align: center;
+}
+
+th:first-child,
+td:first-child {
+  width: 5%;
+  padding: 8px;
+  text-align: center;
+}
+
+
+
+th:nth-last-child(2),
+td:nth-last-child(2),
+th:last-child,
+td:last-child {
+  width: 6%;
+  padding: 8px;
+  text-align: center;
+}
+
+tbody tr:hover {
+  background-color: rgba(10, 180, 209, 0.09);
+  transition: all 0.3s ease;
+}
+
+td {
+  font-size: 12px;
+}
+
+.btn-editar, .btn-eliminar, .btn-ver-detalle {
+  border: none;
+  background-color: white;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  border: 1px solid #0AB4D1;
+}
+
+.btn-ver-detalle:hover {
+  background-color: var(--color-principal-1);
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-editar:hover {
+  background-color: dodgerblue;
+  border: 1px solid dodgerblue;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: firebrick;
+  border: 1px solid firebrick;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-option-table{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.btn-option-table i {
+  font-size: 16px;
+}

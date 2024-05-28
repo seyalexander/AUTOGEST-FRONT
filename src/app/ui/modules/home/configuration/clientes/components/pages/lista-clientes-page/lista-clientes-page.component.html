@@ -1,0 +1,29 @@
+<article>
+  <div class="modal-registro" *ngIf="showRegistro">
+    <app-registro-datos-clientes-page
+      (cerrarComponenteEvent)="mostrarComponente()"
+    />
+  </div>
+  <header>
+    <app-header-pages-configuration
+      (cerrarComponenteEvent)="mostrarComponente()"
+      [nombrePagina]="nombrePagina"
+    />
+  </header>
+  <main>
+    <div class="bg-container-body">
+      <div class="container-body">
+        <app-table-datos-clientes
+          [nombrePagina]="nombrePagina"
+          [pParemetro]="p"
+          [cantidadPaginas]="cantDatosPorPagina"
+          [dataClientes]="datosClienteslista"
+          [isLoading]="isLoading"
+        />
+      </div>
+    </div>
+    <div class="paginacion">
+      <pagination-controls (pageChange)="p = $event" />
+    </div>
+  </main>
+</article>

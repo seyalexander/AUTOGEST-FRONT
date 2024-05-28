@@ -1,0 +1,82 @@
+.target-principal-1,
+.target-principal-2,
+.target-principal-3,
+.target-principal-4 {
+
+  height: 100px;
+  display: flex;
+  flex: 1 0 0;
+  border-radius: 5px;
+  background-color: white;
+
+  & .bg-informacion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+
+    & span:first-child {
+      font-size: 12px;
+      color: rgb(141, 141, 141);
+    }
+
+    & span:nth-child(2) {
+      font-size: 24px;
+      color: rgb(49, 49, 49);
+    }
+  }
+
+  & .bg-icono {
+    display: grid;
+    place-items: center;
+    padding: 6px 12px;
+
+    & i {
+      font-size: 4rem;
+    }
+  }
+}
+
+
+.target-principal-1 {
+  border-left: 8px solid red;
+  & .bg-icono {
+    & i {
+      color: red;
+    }
+  }
+}
+
+
+.target-principal-2 {
+  border-left: 8px solid violet;
+  & .bg-icono {
+    & i {
+      font-size: 4rem;
+      color: violet;
+    }
+  }
+}
+
+.target-principal-3 {
+  border-left: 8px solid rgb(255, 174, 0);
+  & .bg-icono {
+    & i {
+      font-size: 4rem;
+      color: rgb(255, 174, 0);
+    }
+  }
+}
+
+.target-principal-4 {
+  border-left: 8px solid green;
+  & .bg-icono {
+    & i {
+      font-size: 4rem;
+      color: green;
+    }
+  }
+}
+

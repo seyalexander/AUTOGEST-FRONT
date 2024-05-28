@@ -1,0 +1,244 @@
+{
+  "data":[
+    {
+      "id_Auto": 1,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 3,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 1,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    },
+    {
+      "id_Auto": 2,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 4,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 2,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    },
+    {
+      "id_Auto": 1,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 3,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 1,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    },
+    {
+      "id_Auto": 2,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 4,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 2,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    },
+    {
+      "id_Auto": 1,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 3,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 1,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    },
+    {
+      "id_Auto": 2,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 4,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 2,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    },
+    {
+      "id_Auto": 1,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 3,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 1,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    },
+    {
+      "id_Auto": 2,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 4,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 2,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    },
+    {
+      "id_Auto": 1,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 3,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 1,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    },
+    {
+      "id_Auto": 2,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 4,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 2,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    },
+    {
+      "id_Auto": 1,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 3,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 1,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    },
+    {
+      "id_Auto": 2,
+      "Matricula": "matricula",
+      "id_Modelo": {
+        "id_Modelo": 4,
+        "Modelo": "Modelo 1",
+        "id_Marca": {
+          "id_Marca": 3,
+          "nombre_Marca": "Ferrari"
+        }
+      },
+      "id_Cliente": {
+        "id_Cliente": 2,
+        "ruc": "9585412532",
+        "razon_social": "Edcla Desing",
+        "representante_legal": "Dvis Ypa",
+        "telefono": "956458521",
+        "estado": 1
+      }
+    }
+  ]
+}

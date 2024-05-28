@@ -1,0 +1,28 @@
+<article>
+  <div class="modal-update" *ngIf="showUpdate">
+    <app-actualizar-tipo-documentos
+      (cerrarComponenteUpdateEvent)="updateComponente()"
+      [tipoDocumentos]="tipoDocumentoSeleccionada"
+    />
+  </div>
+  <div class="modal-registro" *ngIf="showRegistro">
+    <app-registro-datos-tipo-documentos-page
+      (cerrarComponenteEvent)="mostrarComponente()"
+    />
+  </div>
+  <header>
+    <app-header-pages-configuration
+    [nombrePagina]="nombrePagina"
+    (cerrarComponenteEvent)="mostrarComponente()"/>
+  </header>
+  <main>
+    <div class="bg-container-body">
+      <div class="container-body">
+        <app-tabla-datos-tipo-documentos
+        [dataTipoDocumento]="datosTipoDocumentolista"
+        (cerrarUpdateComponenteEvent)="updateComponente()"
+        (btnBuscarMarcaId)="editarTipoDocumento($event)"/>
+      </div>
+    </div>
+  </main>
+</article>

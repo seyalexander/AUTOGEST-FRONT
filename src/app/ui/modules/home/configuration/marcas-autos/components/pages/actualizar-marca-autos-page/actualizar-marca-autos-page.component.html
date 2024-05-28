@@ -1,0 +1,58 @@
+<article class="container-registrar">
+  <div class="parte-superior">
+    <h2>ACTUALIZAR MARCA AUTO</h2>
+    <button (click)="cerrarComponente()">
+      <i class="uil uil-x"></i>
+    </button>
+  </div>
+  <div class="parte-inferior">
+    <form (ngSubmit)="updateMarcaAuto()" [formGroup]="formularioRegistro">
+      <div class="container-grupos">
+        <div class="grupo-inputs">
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="idMarcaAutos">Id*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="idMarcaAutos"
+              type="text"
+              id="idMarcaAutos"
+              name="idMarcaAutos"
+              [(ngModel)]="marcaAutos.id_Marca"
+              readonly
+            />
+          </div>
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="marcaAutos">Marca*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="marcaAutos"
+              type="text"
+              id="marcaAutos"
+              name="marcaAutos"
+              placeholder="Actualizar marca"
+              required
+              [(ngModel)]="marcaAutos.marca"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="opciones-form">
+        <button
+          class="btn btn-success"
+          role="button"
+
+          [disabled]="!formularioRegistro.valid"
+        >
+          Actualizar
+        </button>
+      </div>
+    </form>
+  </div>
+</article>
+
+

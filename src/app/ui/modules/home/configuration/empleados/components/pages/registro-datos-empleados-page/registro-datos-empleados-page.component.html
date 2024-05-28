@@ -1,0 +1,98 @@
+<article class="container-registrar">
+  <div class="parte-superior">
+    <h2>REGISTRAR MORDELO AUTO</h2>
+    <button (click)="cerrarComponente()">
+      <i class="uil uil-x"></i>
+    </button>
+  </div>
+  <div class="parte-inferior">
+    <form (ngSubmit)="sendModeloAuto()" [formGroup]="formularioRegistro">
+      <div class="container-grupos">
+        <div class="grupo-inputs">
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="nombreEmpleado">Nombres*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="nombreEmpleado"
+              type="text"
+              id="nombreEmpleado"
+              name="nombreEmpleado"
+              placeholder="Registrar modelo"
+              required
+              [(ngModel)]="empleado.nombres"
+            />
+          </div>
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="apellidosEmpleado">Apellidos*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="apellidosEmpleado"
+              type="text"
+              id="apellidosEmpleado"
+              name="modeloAuto"
+              placeholder="Registrar apellidos"
+              required
+              [(ngModel)]="empleado.apellidos"
+            />
+          </div>
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="apellidosEmpleado">Teléfono*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="celularEmpleado"
+              type="text"
+              id="celularEmpleado"
+              name="celularEmpleado"
+              placeholder="Registrar teléfono"
+              required
+              [(ngModel)]="empleado.telefono"
+            />
+          </div>
+        </div>
+        <div class="grupo-inputs">
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="tipoDocumentoEmpleado">Seleccionar tipo documento*:</label>
+            </div>
+            <select formControlName="tipoDocumentoEmpleado" [(ngModel)]="empleado.id_Tipo_Documento_Fk.id_Tipo_Documento"  name="demo" id="#">
+              <option selected="selected" value="">Seleccionar</option>
+              <option  *ngFor="let item of datosTipoDocumentolista" [value]="item.id_Tipo_Documento">{{item.tipo}}</option>
+            </select>
+          </div>
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="documentoEmpleado">Documento*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="documentoEmpleado"
+              type="text"
+              id="documentoEmpleado"
+              name="documentoEmpleado"
+              placeholder="Registrar Documento"
+              required
+              [(ngModel)]="empleado.numero_Documento"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="opciones-form">
+        <button
+          class="btn btn-success"
+          role="button"
+          [disabled]="!formularioRegistro.valid"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</article>
+

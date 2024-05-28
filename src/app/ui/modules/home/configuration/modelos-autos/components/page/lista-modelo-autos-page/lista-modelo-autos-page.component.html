@@ -1,0 +1,28 @@
+<article>
+  <!-- MODAL PARA EDITAR -->
+  <div class="modal-update" *ngIf="showUpdate">
+    <app-actualizar-modelo-autos
+      (cerrarComponenteUpdateEvent)="updateComponente()"
+      [modeloAutos]="modeloSeleccionada"
+    />
+  </div>
+  <div class="modal-registro" *ngIf="showRegistro">
+    <app-registro-datos-modelo-autos-page
+      (cerrarComponenteEvent)="mostrarComponente()"
+    />
+  </div>
+  <header>
+    <app-header-pages-configuration [nombrePagina]="nombrePagina"
+    (cerrarComponenteEvent)="mostrarComponente()"/>
+  </header>
+  <main>
+    <div class="bg-container-body">
+      <div class="container-body">
+        <app-tabla-datos-modelos-autos
+        [dataModeloAutos]="datosModeloAutoslista"
+        (btnBuscarMarcaId)="editarModelo($event)"
+        (cerrarUpdateComponenteEvent)="updateComponente()" />
+      </div>
+    </div>
+  </main>
+</article>

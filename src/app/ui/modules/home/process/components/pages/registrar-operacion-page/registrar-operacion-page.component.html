@@ -1,0 +1,68 @@
+<article class="container-registrar">
+  <div class="parte-superior">
+    <h2>REGISTRAR ORDEN INGRESO</h2>
+  </div>
+  <div class="parte-inferior">
+    <form (ngSubmit)="sendOrdenIngreso()" [formGroup]="formularioRegistro">
+      <div class="container-grupos">
+        <div class="grupo-inputs">
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="Descripcion">Descripción*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="Descripcion"
+              type="text"
+              id="Descripcion"
+              name="Descripcion"
+              placeholder="Registrar descripcion"
+              required
+              [(ngModel)]="ordenIngreso.descripcion_Problema"
+            />
+          </div>
+        </div>
+        <div class="grupo-inputs">
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="dbMarcaAuto">Seleccionar empleado:</label>
+            </div>
+            <select formControlName="Empleado" [(ngModel)]="ordenIngreso.id_Empleado_Fk.id_Empleado"  name="demo" id="#">
+              <option value=""  disabled selected>Seleccionar</option>
+              <option  *ngFor="let item of datosEmpleadolista" [value]="item.id_Empleado">{{item.nombres.toUpperCase()}} {{item.apellidos.toUpperCase()}}</option>
+              </select>
+          </div>
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="dbMarcaAuto">Seleccionar auto*:</label>
+            </div>
+            <select formControlName="Auto" [(ngModel)]="ordenIngreso.id_Auto_Fk.id_Auto"  name="demo" id="#">
+              <option disabled selected value="">Seleccionar</option>
+              <option  *ngFor="let item of datosAutoslista" [value]="item.id_Auto">{{item.matricula}} | {{item.idModeloFk.idMarcaFK.marca}} | {{item.idClienteFk.razon_Social}}</option>
+              </select>
+          </div>
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="dbMarcaAuto">Seleccionar chofer*:</label>
+            </div>
+            <select formControlName="Chofer" [(ngModel)]="ordenIngreso.id_Chofer_Fk.id_Chofer"  name="demo" id="#">
+              <option disabled selected value="">Seleccionar</option>
+              <option  *ngFor="let item of datosChoferlista" [value]="item.id_Chofer">{{item.nombres}} | {{item.numero_Documento}}</option>
+              </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="opciones-form">
+        <button
+          class="btn btn-success"
+          role="button"
+          [disabled]="!formularioRegistro.valid"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</article>
+

@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "Id_Empleado": 1,
+      "Nombres": "Claduio Paul",
+      "Apellidos": "Cruzado Ezquivel",
+      "Id_Tipo_Documento_Fk": {
+        "id_Tipo_Documento": 1,
+        "tipo": "DNI"
+      },
+      "Numero_Documento": "95845235",
+      "Telefono": "985425352"
+    },
+    {
+      "Id_Empleado": 2,
+      "Nombres": "Edwin Alexander",
+      "Apellidos": "Seclen Yupanqui",
+      "Id_Tipo_Documento_Fk": {
+        "id_Tipo_Documento": 2,
+        "tipo": "RUC"
+      },
+      "Numero_Documento": "95845235",
+      "Telefono": "985425352"
+    }
+  ]
+}

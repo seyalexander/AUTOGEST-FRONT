@@ -1,0 +1,42 @@
+<article class="container-registrar">
+  <div class="parte-superior">
+    <h2>ACTUALIZAR T. DOCUMENTO</h2>
+    <button (click)="cerrarComponente()">
+      <i class="uil uil-x"></i>
+    </button>
+  </div>
+  <div class="parte-inferior">
+    <form (ngSubmit)="updateTipoDocumento()" [formGroup]="formularioRegistro">
+      <div class="container-grupos">
+        <div class="grupo-inputs">
+          <div class="bg-input">
+            <div class="bg-label">
+              <label for="tipoDocumento">TIPO DOCUMENTO*:</label>
+            </div>
+            <input
+              [autofocus]
+              formControlName="tipoDocumento"
+              type="text"
+              id="tipoDocumento"
+              name="tipoDocumento"
+              placeholder="Registrar tipoDocumento"
+              required
+              [(ngModel)]="tipoDocumentos.tipo"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="opciones-form">
+        <button
+          class="btn btn-success"
+          role="button"
+          [disabled]="!formularioRegistro.valid"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</article>
+

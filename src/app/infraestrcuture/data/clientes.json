@@ -1,0 +1,84 @@
+{
+  "data": [
+    {
+      "id_Cliente": 1,
+      "ruc": "9585412532",
+      "razon_social": "Edcla Desing",
+      "representante_legal": "Dvis Ypa",
+      "telefono": "956458521",
+      "estado": 1
+    },
+    {
+      "id_Cliente": 2,
+      "ruc": "9585412532",
+      "razon_social": "Edcla Desing",
+      "representante_legal": "Dvis Ypa",
+      "telefono": "956458521",
+      "estado": 1
+    },
+    {
+      "id_Cliente": 3,
+      "ruc": "9585412532",
+      "razon_social": "Edcla Desing",
+      "representante_legal": "Dvis Ypa",
+      "telefono": "956458521",
+      "estado": 1
+    },
+    {
+      "id_Cliente": 4,
+      "ruc": "9585412532",
+      "razon_social": "Edcla Desing",
+      "representante_legal": "Dvis Ypa",
+      "telefono": "956458521",
+      "estado": 1
+    },
+    {
+      "id_Cliente": 5,
+      "ruc": "9585412532",
+      "razon_social": "Edcla Desing",
+      "representante_legal": "Dvis Ypa",
+      "telefono": "956458521",
+      "estado": 1
+    },
+    {
+      "id_Cliente": 5,
+      "ruc": "9585412532",
+      "razon_social": "Edcla Desing",
+      "representante_legal": "Dvis Ypa",
+      "telefono": "956458521",
+      "estado": 1
+    },
+    {
+      "id_Cliente": 5,
+      "ruc": "9585412532",
+      "razon_social": "Edcla Desing",
+      "representante_legal": "Dvis Ypa",
+      "telefono": "956458521",
+      "estado": 1
+    },
+    {
+      "id_Cliente": 5,
+      "ruc": "9585412532",
+      "razon_social": "Edcla Desing",
+      "representante_legal": "Dvis Ypa",
+      "telefono": "956458521",
+      "estado": 1
+    },
+    {
+      "id_Cliente": 5,
+      "ruc": "9585412532",
+      "razon_social": "Edcla Desing",
+      "representante_legal": "Dvis Ypa",
+      "telefono": "956458521",
+      "estado": 1
+    },
+    {
+      "id_Cliente": 5,
+      "ruc": "9585412532",
+      "razon_social": "Edcla Desing",
+      "representante_legal": "Dvis Ypa",
+      "telefono": "956458521",
+      "estado": 1
+    }
+  ]
+}
