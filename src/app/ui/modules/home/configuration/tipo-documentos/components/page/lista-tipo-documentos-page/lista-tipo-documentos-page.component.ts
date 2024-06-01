@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-
 import { TablaDatosTipoDocumentosComponent } from '../../organisms/tabla-datos-tipo-documentos/tabla-datos-tipo-documentos.component';
 import { HeaderPagesConfigurationComponent } from '../../../../../../../shared/components/organisms/header-pages-configuration/header-pages-configuration.component';
 import { RegistroDatosTipoDocumentosPageComponent } from '../registro-datos-tipo-documentos-page/registro-datos-tipo-documentos-page.component';
@@ -8,31 +7,52 @@ import { CommonModule } from '@angular/common';
 import { ActualizarTipoDocumentosComponent } from '../actualizar-tipo-documentos/actualizar-tipo-documentos.component';
 import { tipoDocumentosModel } from '../../../../../../../../domain/models/tipo-documentos/tipo-documentos.model';
 import { GetTipoDocumentoUseCases } from '../../../../../../../../domain/useCase/get-tipo-documentos-use-case';
+import { AuthService } from '../../../../../../../../infraestrcuture/driven-adapter/login/auth.service';
 
 @Component({
   selector: 'app-lista-tipo-documentos-page',
   templateUrl: './lista-tipo-documentos-page.component.html',
   styleUrls: ['./lista-tipo-documentos-page.component.css'],
   standalone: true,
-  imports: [ActualizarTipoDocumentosComponent,RegistroDatosTipoDocumentosPageComponent, HeaderPagesConfigurationComponent, TablaDatosTipoDocumentosComponent, CommonModule]
+  imports: [
+    ActualizarTipoDocumentosComponent,
+    RegistroDatosTipoDocumentosPageComponent,
+    HeaderPagesConfigurationComponent,
+    TablaDatosTipoDocumentosComponent,
+    CommonModule]
 })
 export class ListaTipoDocumentosPageComponent {
   nombrePagina: String = 'TIPO DOCUMENTO'
   isLoading = false;
+  userLoginOn : boolean = false;
+  userLoginId : number = 0;
   datosTipoDocumentolista: Array<tipoDocumentosModel> = [];
 
   //================================================================
   // Inyección de casos de uso
   //================================================================
 
-  constructor(private _getTipoDocumentoUseCase: GetTipoDocumentoUseCases) { }
+  constructor(
+    private _getTipoDocumentoUseCase: GetTipoDocumentoUseCases,
+    private loginService: AuthService
+  ) { }
 
   //================================================================
   // Función principal
   //================================================================
 
   ngOnInit(): void {
+    // this.loginService.currentUserLoginOn.subscribe({
+    //   next:(userLoginOn) => {
+    //     this.userLoginOn = userLoginOn;
+    //     if(this.userLoginOn) {
+
+    //     }
+    //   }
+    // })
+
     this.obtenerTipoDocumentosExito()
+
   }
 
   //================================================================

@@ -3,6 +3,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { HeaderMovilHomeComponent } from '../../../../../shared/components/organisms/header-movil-home/header-movil-home.component';
 import { AsideComponent } from '../../../../../shared/layouts/aside/aside.component';
+import { AuthService } from '../../../../../../infraestrcuture/driven-adapter/login/auth.service';
 
 @Component({
     selector: 'app-home-page',
@@ -21,7 +22,7 @@ export class HomePageComponent {
     accessLink: [],
   };
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private loginService: AuthService) {}
 
   showMenu:boolean = false;
   mostrarComponente(): void {
@@ -152,7 +153,9 @@ export class HomePageComponent {
         route: ['/', 'home','operacion']
       },
     ]
+
   }
+
 
   @Output() abrirComponenteEvent = new EventEmitter<void>();
 

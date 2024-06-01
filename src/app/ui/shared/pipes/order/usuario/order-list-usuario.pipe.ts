@@ -25,7 +25,6 @@ export class OrderListUsuarioPipe implements PipeTransform {
       }
 
     } catch (e) {
-      console.log('Error al filtrar');
       return value;
     }
   }

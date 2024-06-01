@@ -13,12 +13,14 @@ import { clienteModel } from '../../../../../../../../domain/models/clientes/cli
     templateUrl: './table-datos-clientes.component.html',
     styleUrls: ['./table-datos-clientes.component.css'],
     standalone: true,
-    imports: [ThTablesIconTextComponent, LoadersTablesPagesComponent, MensajeTablaVaciaComponent, OrderListClientesPipe, NgxPaginationModule]
+    imports: [ThTablesIconTextComponent, LoadersTablesPagesComponent, MensajeTablaVaciaComponent, OrderListClientesPipe, NgxPaginationModule, NgIf,NgFor ]
 })
 export class TableDatosClientesComponent {
 
   @Input() nombrePagina:  String = '';
+  @Input() userLoginId: number = 0
   @Input() dataClientes:  Array<clienteModel> = [];
+
   @Input() isLoading : boolean = true;
 
   optionSort: {property:string|null, order:string} = {property:null, order: 'asc'}
@@ -35,6 +37,15 @@ export class TableDatosClientesComponent {
   @Input() cantidadPaginas: number = 1;
 
   collection: any[] = this.dataClientes;
+
+  //============================================================================
+  // FUNCIÓN PARA EXPORTAR PDF
+  //============================================================================
+
+  @Output() exportarPdfEvent = new EventEmitter<number>();
+  exportarPDF(id_Clientes: any) {
+    this.exportarPdfEvent.emit(id_Clientes);
+  }
 
   //============================================================================
   // FUNCIÓN PARA EJECUTAR UNA FUNCIÓN DEL COMPONENTE HIJO AL PADRE

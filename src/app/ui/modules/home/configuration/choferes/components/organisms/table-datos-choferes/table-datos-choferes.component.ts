@@ -15,6 +15,11 @@ import { choferesModel } from '../../../../../../../../domain/models/choferes/ch
 export class TableDatosChoferesComponent {
   @Input() dataChoferes:  Array<choferesModel> = [];
 
+  ngOnInit(): void {
+
+  }
+
+
   optionSort: {property:string|null, order:string} = {property:null, order: 'asc'}
 
   cambiarOrden (property:string):void {

@@ -1,11 +1,9 @@
 import { GetChoferesUseCases } from './../../../../../../../../domain/useCase/get-choferes-use-case';
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { Subscription } from 'rxjs';
 import { TableDatosChoferesComponent } from '../../organisms/table-datos-choferes/table-datos-choferes.component';
 import { TableDatosClientesComponent } from '../../../../clientes/components/organisms/table-datos-clientes/table-datos-clientes.component';
-
 import { RegistroDatosClientesPageComponent } from '../../../../clientes/components/pages/registro-datos-clientes-page/RegistroDatosClientesPageComponent';
 import { HeaderPagesConfigurationComponent } from '../../../../../../../shared/components/organisms/header-pages-configuration/header-pages-configuration.component';
 import { HeaderConfigurationComponent } from '../../../../../../../shared/components/organisms/header-configuration/header-configuration.component';
@@ -37,8 +35,6 @@ export class ListaChoferesPageComponent {
 
 
   private _getChoferesUseCase = inject(GetChoferesUseCases);
-
-
   private clientesSubscription: Subscription | undefined;
 
   ngOnInit(): void {

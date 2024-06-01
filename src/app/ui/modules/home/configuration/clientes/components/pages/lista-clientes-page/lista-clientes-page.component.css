@@ -20,26 +20,26 @@ header {
   padding: 12px 24px 0 12px;
 }
 
-main {
+/* main {
   margin-top: 12px;
   padding: 12px 24px;
-}
+} */
 
-.bg-container-body {
+/* .bg-container-body {
   width: auto;
   max-height: 30rem;
   overflow: hidden;
-}
+} */
 
-.container-body {
+/* .container-body {
   width: auto;
   max-height: 400px;
   overflow-y: scroll;
   border-radius: 5px;
   border: 1px solid rgba(10, 180, 209, 0.3);
-}
+} */
 
-.container-body::-webkit-scrollbar {
+/* .container-body::-webkit-scrollbar {
   width: 8px;
 }
 
@@ -54,7 +54,7 @@ main {
 
 .container-body::-webkit-scrollbar-thumb {
   background-color: #1092a8;
-}
+} */
 
 .paginacion {
   margin-top: 0.8rem;

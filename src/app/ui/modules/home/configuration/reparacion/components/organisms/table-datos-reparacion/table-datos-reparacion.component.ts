@@ -44,6 +44,6 @@ export class TableDatosReparacionComponent {
   }
 
   ngOnInit() {
-    console.log("Desde la tabla: ", this.dataReparacion);
+
   }
 }

@@ -37,23 +37,26 @@
   </thead>
   <tbody>
 
-    <tr *ngFor="let item of dataChoferes; index as i">
-      <td scope="row">{{i}}</td>
-      <td>{{item.nombres}}</td>
-      <td>{{item.apellidos}}</td>
-      <td>{{item.telefono}}</td>
-      <td>{{item.id_Tipo_Documento_Fk.tipo}}</td>
-      <td>{{item.numero_Documento}}</td>
-      <td>
-        <button class="btn-option-table btn-editar">
-          <i class="uil uil-pen"></i>
-        </button>
-      </td>
-      <td>
-        <button class="btn-option-table btn-eliminar">
-          <i class="uil uil-trash"></i>
-        </button>
-      </td>
+    @for (item of dataChoferes; track $index) {
+      <tr>
+        <td scope="row">{{$index}}</td>
+        <td>{{item.nombres}}</td>
+        <td>{{item.apellidos}}</td>
+        <td>{{item.telefono}}</td>
+        <td>{{item.id_Tipo_Documento_Fk.tipo}}</td>
+        <td>{{item.numero_Documento}}</td>
+        <td>
+          <button class="btn-option-table btn-editar">
+            <i class="uil uil-pen"></i>
+          </button>
+        </td>
+        <td>
+          <button class="btn-option-table btn-eliminar">
+            <i class="uil uil-trash"></i>
+          </button>
+        </td>
+      </tr>
+    }
 
   </tbody>
 </table>

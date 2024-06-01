@@ -27,7 +27,6 @@ export class ListaReparacionPageComponent {
     const ObservarDatosModeloAutos$ = this._getReparacionUseCase.getAllReparacion().
     subscribe( Response => {
         this.datosReparacionlista = Response;
-        console.log(this.datosReparacionlista)
       })
 
     this.listObservers$ = [ObservarDatosModeloAutos$]

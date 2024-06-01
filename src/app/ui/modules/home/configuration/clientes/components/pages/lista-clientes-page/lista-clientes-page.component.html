@@ -19,11 +19,14 @@
           [cantidadPaginas]="cantDatosPorPagina"
           [dataClientes]="datosClienteslista"
           [isLoading]="isLoading"
+          (exportarPdfEvent)="clienteSeleccionado($event)"
         />
       </div>
     </div>
-    <div class="paginacion">
+
+    <!-- <div class="paginacion">
       <pagination-controls (pageChange)="p = $event" />
-    </div>
+    </div> -->
   </main>
 </article>
+

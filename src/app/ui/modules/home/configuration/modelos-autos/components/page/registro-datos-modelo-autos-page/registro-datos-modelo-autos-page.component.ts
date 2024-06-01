@@ -65,7 +65,6 @@ export class RegistroDatosModeloAutosPageComponent {
     this.marcaAutoSubscription = this._getMarcaAutoUseCase.getAllMarcaAutos().
       subscribe((Response: marcaAutosModel[]) => {
         this.datosMarcaAutoslista = Response;
-        console.log(Response);
       })
   }
 
@@ -74,7 +73,6 @@ export class RegistroDatosModeloAutosPageComponent {
       .newModeloAuto(this.modeloAuto)
       .subscribe((response: any) => {
         this.cerrarComponente()
-        console.log(response);
         this.mensajeValidacionRegistroCorrecto(response)
       });
   }

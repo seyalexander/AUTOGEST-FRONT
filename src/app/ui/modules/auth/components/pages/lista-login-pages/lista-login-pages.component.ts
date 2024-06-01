@@ -10,54 +10,97 @@ import { LoginRequest } from '../../../../../../domain/models/login/login-reques
 @Component({
   selector: 'app-lista-login-pages',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule ],
+  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
   templateUrl: './lista-login-pages.component.html',
   styleUrls: ['./lista-login-pages.component.css']
 })
 export class ListaLoginPagesComponent implements OnInit {
-  loginError:string="";
+  loginError: string = "";
+  userNombre: String = ''
+  userLoginOn: boolean = false;
+  userLoginId: number = 0;
+  ingreso: boolean = true
+  mensaje: string = 'Credenciales incorrectas'
+  contadorVecesIngresos: number = 0
+  bloqueado: boolean = false
 
-  loginForm=this.formBuilder.group({
-    username:['',[Validators.required]],
-    password: ['',Validators.required],
+  loginForm = this.formBuilder.group({
+    username: ['', [Validators.required]],
+    password: ['', Validators.required],
   })
 
-  constructor(private formBuilder:FormBuilder, private router:Router, private loginService: AuthService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private loginService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  get email(){
+  get email() {
     return this.loginForm.controls.username;
   }
 
-  get password()
-  {
+  get password() {
     return this.loginForm.controls.password;
   }
 
-  login(){
-    if(this.loginForm.valid){
-      this.loginError="";
+  login() {
+    if (this.loginForm.valid) {
+      this.loginError = "";
       this.loginService.login(this.loginForm.value as LoginRequest).subscribe({
         next: (userData: any) => {
-          console.log(userData);
+          this.loginService.currentUserLoginOn.subscribe({
+            next: (userLoginOn) => {
+              this.userLoginOn = userLoginOn
+              if (userLoginOn == true) {
+                this.loginService.currentUserIdEmpleado.subscribe({
+                  next: (userLoginId) => {
+                    this.userLoginId = userLoginId
+                    if (userLoginId > 0) {
+                      this.router.navigateByUrl('/home');
+                      this.loginForm.reset();
+                      this.ingreso = true
+                    } else {
+                      this.router.navigateByUrl('/');
+                      this.ingreso = false
+                      this.loginForm.reset();
+                      this.mensaje = 'Credenciales incorrectas'
+                      this.contadorVecesIngresos += 1
+                      if (this.contadorVecesIngresos >= 3) {
+                        this.mensaje = 'Haz intentado muchas veces, comunícate con el administrador'
+                        this.bloqueado = true
+                      }
+
+                    }
+                  }
+                })
+              }
+            }
+          })
+
         },
-        error: (errorData:any) => {
+        error: (errorData: any) => {
           console.error(errorData);
-          this.loginError=errorData;
+          this.loginError = errorData;
+          this.mensaje = errorData
+          this.ingreso = false
+          this.contadorVecesIngresos += 1
+          if (this.contadorVecesIngresos >= 3) {
+            this.mensaje = 'Haz intentado muchas veces, comunícate con el administrador'
+          }
         },
-        complete: () => {
-          console.info("Login completo");
-          this.router.navigateByUrl('/home');
-          this.loginForm.reset();
-        }
       })
 
     }
-    else{
+    else {
       this.loginForm.markAllAsTouched();
-      alert("Error al ingresar los datos.");
+      this.ingreso = false
+      this.mensaje = 'Ingrese las credenciales por favor'
+      // alert("Error al ingresar los datos.");
     }
+  }
+
+  mostrar: boolean = false
+  showMensaje() {
+    this.mostrar = true
+    window.location.reload()
   }
 }

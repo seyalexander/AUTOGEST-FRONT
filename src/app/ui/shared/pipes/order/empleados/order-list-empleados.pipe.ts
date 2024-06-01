@@ -26,7 +26,6 @@ export class OrderListEmpleadosPipe implements PipeTransform {
       }
 
     } catch (e) {
-      console.log('Error al filtrar');
       return value;
     }
   }

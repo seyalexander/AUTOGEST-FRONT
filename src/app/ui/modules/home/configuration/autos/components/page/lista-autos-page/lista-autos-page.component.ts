@@ -39,8 +39,6 @@ export class ListaAutosPageComponent {
     this.loginService.currentUserLoginOn.subscribe({
       next:(userLoginOn) => {
         this.userLoginOn = userLoginOn;
-        console.log(userLoginOn);
-
         if (this.userLoginOn) {
           this.obtenerAutosExito();
         }
@@ -68,8 +66,6 @@ export class ListaAutosPageComponent {
     this.autosSubscription = this._getAutosUseCase.getAllAutos().
       subscribe((Response: autosModel[]) => {
         this.datosAutoslista = Response;
-        console.log(Response);
-
         this.isLoading = false;
       })
   }
