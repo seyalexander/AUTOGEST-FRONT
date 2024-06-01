@@ -98,7 +98,7 @@
           }
         },
         "deploy": {
-          "builder": "",
+          "builder": "@netlify-builder/deploy:deploy",
           "options": {
             "outputPath": "dist/edwin",
             "netlifyToken": "",
