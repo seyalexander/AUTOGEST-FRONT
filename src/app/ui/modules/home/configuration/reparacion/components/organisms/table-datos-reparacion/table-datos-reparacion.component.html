@@ -8,7 +8,7 @@
       </th>
       <th>
         <app-th-tables-icon-text
-          [nombreTh]="'Cliente'"
+          [nombreTh]="'Fecha recepción'"
         />
       </th>
       <th>
@@ -45,8 +45,8 @@
     <tr *ngFor=" let item of dataReparacion | orderListReparacion : optionSort.property : optionSort.order; index as i">
 
       <td scope="row">{{i}}</td>
-      <td>{{item.id_Orden_Ingreso_Fk.id_Auto_Fk.idClienteFk.razon_Social}}</td>
-      <td>{{item.id_Orden_Ingreso_Fk.id_Auto_Fk.matricula}}</td>
+      <td>{{item.id_Orden_Ingreso_Fk.id_Prediagnostico_Fk.id_Recepcion_Fk.id_Cita_Fk.id_Auto_Fk.idClienteFk.razon_Social}}</td>
+      <td>{{item.id_Orden_Ingreso_Fk.id_Prediagnostico_Fk.id_Recepcion_Fk.id_Cita_Fk.id_Auto_Fk.matricula}}</td>
       <td>
         <div *ngFor="let empleado of item.listaEmpleado" class="empleado-item">
           <h4>- {{empleado.id_Empleado_Fk.nombres}} {{empleado.id_Empleado_Fk.apellidos}}</h4>

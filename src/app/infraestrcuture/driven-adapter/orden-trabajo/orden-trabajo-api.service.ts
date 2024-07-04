@@ -27,6 +27,10 @@ export class OrdenTrabajoApiService extends ordenTrabajoGateway{
     return this.httpClient.post(`${this.URL}/InsertarOrdenIngreso`,ordenes)
   }
 
+  override getByIdUnique(id: number): Observable<ordenTrabajoModel> {
+    return this.httpClient.get<ordenTrabajoModel>(`${this.URL}/BusquedaIngresoId/${id}`)
+  }
+
   constructor(private httpClient: HttpClient) {
     super();
   }

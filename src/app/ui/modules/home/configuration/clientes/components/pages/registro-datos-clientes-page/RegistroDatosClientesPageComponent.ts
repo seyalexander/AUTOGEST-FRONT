@@ -80,10 +80,6 @@ export class RegistroDatosClientesPageComponent {
         this.cantidadCaracteresTelefono,
         this.onlyLetrasValidator
       ]),
-      estado: new FormControl('', [
-        Validators.pattern(/^\d{1}$/),
-        Validators.required,
-      ]),
     });
   }
 

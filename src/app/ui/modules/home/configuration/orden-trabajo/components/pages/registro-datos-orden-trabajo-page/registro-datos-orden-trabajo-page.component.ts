@@ -17,6 +17,9 @@ import { GetMarcaAutosUseCases } from '../../../../../../../../domain/useCase/ge
 import { GetAutosUseCases } from '../../../../../../../../domain/useCase/get-autos-use-case';
 import { GetTipoEmpleadosUseCases } from '../../../../../../../../domain/useCase/get-empleado-use-case';
 import { GetChoferesUseCases } from '../../../../../../../../domain/useCase/get-choferes-use-case';
+import { citasModel } from '../../../../../../../../domain/models/citas/citas.model';
+import { GetCitasUseCase } from '../../../../../../../../domain/useCase/get-citas-use-case';
+import { AuthService } from '../../../../../../../../infraestrcuture/driven-adapter/login/auth.service';
 
 @Component({
     selector: 'app-registro-datos-orden-trabajo-page',
@@ -33,6 +36,19 @@ export class RegistroDatosOrdenTrabajoPageComponent {
   datosEmpleadolista: Array <empleadoModel> = [];
   datosChoferlista: Array <choferesModel> = [];
   listObservers$: Array<Subscription> = [];
+  citasResponse: Array<citasModel> = [];
+  private citaSubscription: Subscription | undefined;
+  datosCitaslista: Array<citasModel> = [];
+  listaCitasEntrega: Array <citasModel> = [];
+
+
+  userNombre: String = ''
+  userLoginOn : boolean = false;
+  userLoginId : number = 0;
+  userData : any = ""
+
+  private _getCitasUseCase = inject(GetCitasUseCase);
+  private loginService = inject(AuthService);
 
   @Output() cerrarComponenteEvent = new EventEmitter<void>();
 
@@ -64,11 +80,8 @@ export class RegistroDatosOrdenTrabajoPageComponent {
   ) {}
 
   ngOnInit(): void {
-    this.obtenerMarcaAutosExito()
-    this.obtenerMordeloAutosExito()
-    this.obtenerAutosExito()
     this.obtenerEmpleadosExito()
-    this.obtenerChoferesExito()
+
     this.formularioRegistro = new FormGroup({
       Descripcion: new FormControl('', [
         Validators.required,
@@ -81,27 +94,25 @@ export class RegistroDatosOrdenTrabajoPageComponent {
       Chofer: new FormControl('', [
       ]),
     });
-  }
 
-  obtenerMarcaAutosExito(): void {
-    this.marcaAutoSubscription = this._getMarcaAutoUseCase.getAllMarcaAutos().
-      subscribe((Response: marcaAutosModel[]) => {
-        this.datosMarcaAutoslista = Response;
-      })
-  }
 
-  obtenerMordeloAutosExito(): void {
-    this.modeloAutoSubscription = this._getmodeloAutoUseCase.getAllModeloAutos().
-      subscribe((Response: modeloAutosModel[]) => {
-        this.datosModeloAutoslista = Response;
-      })
-  }
+    this.loginService.currentUserLoginOn.subscribe({
+      next: (userLoginOn) => {
+        this.userLoginOn = userLoginOn;
+        console.log(this.userLoginOn);
 
-  obtenerAutosExito(): void {
-    this.autoSubscription = this._getAutoUseCase.getAllAutos().
-      subscribe((Response: autosModel[]) => {
-        this.datosAutoslista = Response;
-      })
+        if (this.userLoginOn) {
+          this.listarCitas()
+        } else {
+          this.userLoginId = 0;
+          this.userNombre = '';
+          this.userData = '';
+          this.datosAutoslista = [];
+          this.datosCitaslista = [];
+
+        }
+      }
+    });
   }
 
   obtenerEmpleadosExito(): void {
@@ -111,11 +122,15 @@ export class RegistroDatosOrdenTrabajoPageComponent {
       })
   }
 
-  obtenerChoferesExito(): void {
-    this.choferSubscription = this._getChoferUseCase.getAllChoferes().
-      subscribe((Response: choferesModel[]) => {
-        this.datosChoferlista = Response;
-      })
+
+  listarCitas() {
+    this.citaSubscription = this._getCitasUseCase.citasEntregadas()
+    .subscribe((Response: citasModel[]) => {
+      this.listaCitasEntrega = Response
+      console.log(this.listaCitasEntrega);
+      console.log(Response);
+    })
+
   }
 
   public sendOrdenIngreso(): void {

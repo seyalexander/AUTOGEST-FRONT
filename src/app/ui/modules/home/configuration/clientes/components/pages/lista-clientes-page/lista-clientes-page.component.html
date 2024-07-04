@@ -1,9 +1,9 @@
+<div class="modal-registro" *ngIf="showRegistro">
+  <app-registro-datos-clientes-page
+    (cerrarComponenteEvent)="mostrarComponente()"
+  />
+</div>
 <article>
-  <div class="modal-registro" *ngIf="showRegistro">
-    <app-registro-datos-clientes-page
-      (cerrarComponenteEvent)="mostrarComponente()"
-    />
-  </div>
   <header>
     <app-header-pages-configuration
       (cerrarComponenteEvent)="mostrarComponente()"

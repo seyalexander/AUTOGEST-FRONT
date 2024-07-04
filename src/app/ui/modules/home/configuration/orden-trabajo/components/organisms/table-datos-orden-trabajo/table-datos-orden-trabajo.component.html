@@ -13,22 +13,12 @@
       </th>
       <th>
         <app-th-tables-icon-text
-          [nombreTh]="'Descripción'"
-        />
-      </th>
-      <th>
-        <app-th-tables-icon-text
           [nombreTh]="'A. Matrícula'"
         />
       </th>
       <th>
         <app-th-tables-icon-text
           [nombreTh]="'Emp. Nombre'"
-        />
-      </th>
-      <th>
-        <app-th-tables-icon-text
-          [nombreTh]="'Emp. Ape.'"
         />
       </th>
       <th >Editar</th>
@@ -40,11 +30,9 @@
     <tr *ngFor=" let item of dataOrdenTrabajo | orderListOrdenTrabajo : optionSort.property : optionSort.order">
 
       <td scope="row">{{item.id_Orden_Ingreso}}</td>
-      <td>{{ item.id_Auto_Fk.idClienteFk.razon_Social }}</td>
-      <td>{{item.descripcion_Problema}}</td>
-      <td>{{item.id_Auto_Fk.matricula}}</td>
-      <td>{{item.id_Empleado_Fk.nombres}}</td>
-      <td>{{item.id_Empleado_Fk.apellidos}}</td>
+      <td>{{ item.id_Prediagnostico_Fk.id_Recepcion_Fk.id_Cita_Fk.id_Auto_Fk.idClienteFk.razon_Social}}</td>
+      <td>{{item.id_Prediagnostico_Fk.id_Recepcion_Fk.id_Cita_Fk.id_Auto_Fk.matricula}}</td>
+      <td>{{item.id_Empleado_Fk.nombres}} {{item.id_Empleado_Fk.apellidos}}</td>
       <td>
         <button (click)="getById(item.id_Orden_Ingreso)"  class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>

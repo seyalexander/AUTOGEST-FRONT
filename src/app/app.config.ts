@@ -1,6 +1,5 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
 import { clientesGateway } from './domain/models/clientes/gateway/clientes-gateway';
 import { marcaAutosGateway } from './domain/models/marcas-autos/gateway/marca-autos-gateway';
@@ -32,6 +31,12 @@ import { ReparacionApiService } from './infraestrcuture/driven-adapter/reparacio
 import { RolUsuarioApiService } from './infraestrcuture/driven-adapter/rol-usuarios/rol-usuario-api.service';
 import { UsuariosApiService } from './infraestrcuture/driven-adapter/usuarios/usuarios-api.service';
 import { FamiliaProductosApiService } from './infraestrcuture/driven-adapter/familia-productos/familia-productos-api.service';
+import { citasGateway } from './domain/models/citas/gateway/citas-gateway';
+import { CitasApiService } from './infraestrcuture/driven-adapter/citas/citas-api.service';
+import { recepcionGateway } from './domain/models/recepcion/gateway/recepcion-gateway';
+import { RecepcionApiService } from './infraestrcuture/driven-adapter/recepcion/recepcion-api.service';
+import { prediagnosticoGateway } from './domain/models/preDiagnostico/gateway/prediagnostico-gateway';
+import { PrediagnosticoApiService } from './infraestrcuture/driven-adapter/prediagnostico/prediagnostico-api.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
@@ -48,6 +53,9 @@ export const appConfig: ApplicationConfig = {
     { provide: familiaProductosGateway, useClass: FamiliaProductosApiService },
     { provide: productosGateway, useClass: ProductosApiService },
     { provide: choferesGateway, useClass: ChoferesApiService },
+    { provide: citasGateway, useClass: CitasApiService },
+    { provide: recepcionGateway, useClass: RecepcionApiService },
+    { provide: prediagnosticoGateway, useClass: PrediagnosticoApiService},
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     {provide:HTTP_INTERCEPTORS,useClass:ClienteInterceptorService,multi:true},
     {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptorService,multi:true},

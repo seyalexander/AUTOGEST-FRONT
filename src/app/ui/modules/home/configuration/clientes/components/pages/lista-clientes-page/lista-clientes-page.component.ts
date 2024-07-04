@@ -87,63 +87,10 @@ export class ListaClientesPageComponent implements OnDestroy {
 
 
 
-  // exportToPDF() {
-  //   const doc = new jsPDF();
-
-  //   // Opcional: Establecer el título del documento
-  //   doc.text('Lista de Clientes', 14, 16);
-
-  //   // Definir las columnas
-  //   const columns = [
-  //     { title: 'RAZON SOCIAL', dataKey: 'razon_social' },
-  //     { title: 'REPRESENTANTE', dataKey: 'representante' },
-  //     { title: 'TELÉFONO', dataKey: 'telefono' }
-  //   ];
-
-
-  //   // Generar la tabla
-  //    // Generar la tabla
-  //    (doc as any).autoTable({
-  //     head: [columns.map(col => col.title)],
-  //     body: [[this.clienteSeleccionada.razon_Social, this.clienteSeleccionada.representante_Legal, this.clienteSeleccionada.telefono]],
-  //     startY: 25, // Ajuste para no solaparse con el título
-  //     styles: { // Estilos generales
-  //       font: 'helvetica',
-  //       fontSize: 10,
-  //       cellPadding: 4,
-  //       textColor: [34, 34, 34],
-  //       fillColor: [255, 255, 255],
-  //       lineColor: [44, 62, 80],
-  //       lineWidth: 0.2,
-  //     },
-  //     headStyles: { // Estilos de la cabecera
-  //       fillColor: [52, 152, 219], // Azul claro
-  //       textColor: [255, 255, 255], // Blanco
-  //       fontSize: 12,
-  //       fontStyle: 'bold',
-  //       halign: 'center' // Alineación horizontal centrada
-  //     },
-  //     alternateRowStyles: { // Estilos de filas alternas
-  //       fillColor: [245, 245, 245]
-  //     },
-  //     columnStyles: { // Estilos específicos por columna
-  //       0: { cellWidth: 'auto' },
-  //       1: { cellWidth: 'auto' },
-  //       2: { cellWidth: 'auto' }
-  //     }
-  //   });
-
-  //   // Guardar el PDF
-  //   // doc.save('clientes.pdf');
-  //   window.open(doc.output('bloburl'), '_blank');
-  // }
-
   exportToPDF() {
     const doc = new jsPDF();
 
-    // Establecer el título del documento
-    doc.setFontSize(18);
-    doc.setTextColor(40, 40, 40);
+    // Opcional: Establecer el título del documento
     doc.text('Lista de Clientes', 14, 16);
 
     // Definir las columnas
@@ -153,57 +100,44 @@ export class ListaClientesPageComponent implements OnDestroy {
       { title: 'TELÉFONO', dataKey: 'telefono' }
     ];
 
-    // Datos de ejemplo
-    const data = [
-      { razon_social: 'Empresa A', representante: 'Juan Perez', telefono: '123-456-7890' },
-      { razon_social: 'Empresa B', representante: 'Ana Martinez', telefono: '234-567-8901' },
-      { razon_social: 'Empresa C', representante: 'Luis Gomez', telefono: '345-678-9012' }
-    ];
 
     // Generar la tabla
-    (doc as any).autoTable({
+     //Generar la tabla
+     (doc as any).autoTable({
       head: [columns.map(col => col.title)],
-      body: data.map(item => [item.razon_social, item.representante, item.telefono]),
-      startY: 25,
-      theme: 'striped',
-      styles: {
+      body: [[this.clienteSeleccionada.razon_Social, this.clienteSeleccionada.representante_Legal, this.clienteSeleccionada.telefono]],
+      startY: 25, // Ajuste para no solaparse con el título
+      styles: { // Estilos generales
         font: 'helvetica',
-        fontSize: 12,
-        cellPadding: 8,
-        textColor: [0, 0, 0],
+        fontSize: 10,
+        cellPadding: 4,
+        textColor: [34, 34, 34],
         fillColor: [255, 255, 255],
-        lineColor: [0, 0, 0],
-        lineWidth: 0.1,
+        lineColor: [44, 62, 80],
+        lineWidth: 0.2,
       },
-      headStyles: {
-        fillColor: [41, 128, 185],
-        textColor: [255, 255, 255],
-        fontSize: 13,
+      headStyles: { // Estilos de la cabecera
+        fillColor: [52, 152, 219], // Azul claro
+        textColor: [255, 255, 255], // Blanco
+        fontSize: 12,
         fontStyle: 'bold',
-        halign: 'center'
+        halign: 'center' // Alineación horizontal centrada
       },
-      alternateRowStyles: {
+      alternateRowStyles: { // Estilos de filas alternas
         fillColor: [245, 245, 245]
       },
-      columnStyles: {
-        0: { cellWidth: 'auto', halign: 'center' },
-        1: { cellWidth: 'auto', halign: 'center' },
-        2: { cellWidth: 'auto', halign: 'center' }
-      },
-      margin: { top: 10, left: 14, right: 14, bottom: 10 }
+      columnStyles: { // Estilos específicos por columna
+        0: { cellWidth: 'auto' },
+        1: { cellWidth: 'auto' },
+        2: { cellWidth: 'auto' }
+      }
     });
 
-    // Dibujar el ícono al estilo del modal
-    doc.setDrawColor(0);
-    doc.setFillColor(255, 255, 255);
-    doc.circle(105, 22, 10, 'FD'); // Dibujar un círculo como ícono
-    doc.setTextColor(41, 128, 185);
-    doc.setFontSize(20);
-    doc.text('✓', 101, 27); // Agregar una marca de verificación dentro del círculo
-
     // Guardar el PDF
+    // doc.save('clientes.pdf');
     window.open(doc.output('bloburl'), '_blank');
   }
+
 
 
 

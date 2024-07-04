@@ -8,6 +8,7 @@ import { RegistroDatosClientesPageComponent } from '../../../../clientes/compone
 import { HeaderPagesConfigurationComponent } from '../../../../../../../shared/components/organisms/header-pages-configuration/header-pages-configuration.component';
 import { HeaderConfigurationComponent } from '../../../../../../../shared/components/organisms/header-configuration/header-configuration.component';
 import { choferesModel } from '../../../../../../../../domain/models/choferes/choferes.model';
+import { RegisttroChoferesPageComponent } from '../registtro-choferes-page/registtro-choferes-page.component';
 
 
 @Component({
@@ -19,7 +20,8 @@ import { choferesModel } from '../../../../../../../../domain/models/choferes/ch
     TableDatosClientesComponent,
     CommonModule,
     TableDatosChoferesComponent,
-    HeaderConfigurationComponent
+    HeaderConfigurationComponent,
+    RegisttroChoferesPageComponent
   ],
   templateUrl: './lista-choferes-page.component.html',
   styleUrls: ['./lista-choferes-page.component.css']

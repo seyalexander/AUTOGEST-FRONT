@@ -1,14 +1,12 @@
-import { autosModel } from "../autos/autos.model";
-import { choferesModel } from "../choferes/choferes.model";
 import { empleadoModel } from "../empleado/empleado.model";
+import { preDiagnosticoModel } from "../preDiagnostico/preDiagnostico.model";
 
 export class ordenTrabajoModel {
-  id_Orden_Ingreso: String | number = '';
-  Numero_Orden: number = 0;
-  Fecha_Entrada: String = '';
-  descripcion_Problema: String = '';
-  Estado_Orden: number = 0;
-  id_Auto_Fk: autosModel = {} as autosModel;
+  fechaIngreso: string = '';
+  horaIngreso: string = '';
+  fechaEntrega: string = '';
+  horaEntrega: string = '';
+  id_Prediagnostico_Fk: preDiagnosticoModel = {} as preDiagnosticoModel;
   id_Empleado_Fk: empleadoModel = {} as empleadoModel;
-  id_Chofer_Fk: choferesModel = {} as choferesModel;
+  id_Orden_Ingreso: number = 0;
 }

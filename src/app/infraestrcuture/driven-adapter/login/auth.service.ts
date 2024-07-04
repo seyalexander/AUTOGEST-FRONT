@@ -21,6 +21,7 @@ export class AuthService {
     const clienteId = sessionStorage.getItem("clienteId");
     const empleadoId = sessionStorage.getItem("empleado");
     const clienteNombre = sessionStorage.getItem("clienteNombre");
+    this.currentUserIdClient = new BehaviorSubject<number>(empleadoId ? Number(empleadoId) : 0)
     this.currentUserLoginOn=new BehaviorSubject<boolean>(sessionStorage.getItem("jwt")!=null);
     this.currentUserData=new BehaviorSubject<String>(sessionStorage.getItem("jwt") || "");
 
@@ -42,6 +43,7 @@ export class AuthService {
       tap( (userData) => {
         console.log("SERVICIO LOGIN:", userData);
         sessionStorage.setItem("jwt", userData.jwt);
+        sessionStorage.setItem("empleado", userData.empleado);
         this.currentUserData.next(userData.jwt);
         this.currentUserIdClient.next(userData.cliente);
         this.currentUserIdEmpleado.next(userData.empleado)

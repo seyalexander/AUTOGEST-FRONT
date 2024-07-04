@@ -55,7 +55,7 @@ export class HomePageComponent {
             route: ['/','home','choferes']
           },
           {
-            name: ['MostrarCliente'],
+            name: ['Cliente'],
             icon: 'uil uil-document-info',
             route: ['/','home','MostrarCliente']
           },
@@ -97,6 +97,11 @@ export class HomePageComponent {
             icon: 'uil uil-document-info',
             route: ['/','home','reparacion']
           },
+          {
+            name: ['recepción'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','recepcion']
+          },
         ],
       },
       {
@@ -119,12 +124,6 @@ export class HomePageComponent {
         name: ['Conf. autos'],
         icon: 'uil uil-document-info',
         opciones: [
-
-          {
-            name: ['choferes'],
-            icon: 'uil uil-document-info',
-            route: ['/','home','choferes']
-          },
           {
             name: ['marca autos'],
             icon: 'uil uil-document-info',
@@ -150,10 +149,20 @@ export class HomePageComponent {
       {
         name: ['Operaciones'],
         icon: 'uil uil-document-info',
-        route: ['/', 'home','operacion']
+        opciones: [
+          {
+            name: ['Orden de ingreso'],
+            icon: 'uil uil-document-info',
+            route: ['/', 'home','operacion']
+          },
+        ],
       },
     ]
 
+  }
+
+  salir () {
+    this.loginService.logout()
   }
 
 

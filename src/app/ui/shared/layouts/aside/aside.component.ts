@@ -49,7 +49,7 @@ export class AsideComponent {
           {
             name: ['MostrarCliente'],
             icon: 'uil uil-document-info',
-            route: ['/','home','MostrarCliente']
+            route: ['/','home','Cliente']
           },
           {
             name: ['marca autos'],
@@ -100,6 +100,11 @@ export class AsideComponent {
             name: ['usuarios'],
             icon: 'uil uil-document-info',
             route: ['/','home','usuarios']
+          },
+          {
+            name: ['recepción'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','recepcion']
           }
         ]
       },

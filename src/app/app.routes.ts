@@ -18,6 +18,7 @@ import { ListaUsuariosPageComponent } from './ui/modules/home/configuration/usua
 import { ListaFamiliaProductoPageComponent } from './ui/modules/home/configuration/familia-productos/components/pages/lista-familia-producto-page/lista-familia-producto-page.component';
 import { ListaProductosPageComponent } from './ui/modules/home/configuration/productos/components/pages/lista-productos-page/lista-productos-page.component';
 import { ConfigurationPageComponent } from './ui/modules/home/configuration/configuration/components/configuration-page/configuration-page.component';
+import { ListaRecepcionPageComponent } from './ui/modules/home/configuration/recepcion/components/pages/lista-recepcion-page/lista-recepcion-page.component';
 
 export const routes: Routes = [
   {
@@ -98,6 +99,10 @@ export const routes: Routes = [
       {
         path: 'operacion',
         component: ListaOrdenTrabajoPageComponent
+      },
+      {
+        path: 'recepcion',
+        component: ListaRecepcionPageComponent
       },
     ]
   },

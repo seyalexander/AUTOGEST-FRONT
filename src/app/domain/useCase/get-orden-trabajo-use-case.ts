@@ -20,4 +20,8 @@ export class GetOrdenTrabajoUseCases {
     return this._ordenTrabajoGateWay.newOrdenProducto(ordenTrabajo)
   }
 
+  getByIdUnique(id: number): Observable<ordenTrabajoModel> {
+    return this._ordenTrabajoGateWay.getByIdUnique(id)
+  }
+
 }

@@ -11,23 +11,6 @@
         <div class="grupo-inputs">
           <div class="bg-input">
             <div class="bg-label">
-              <label for="Descripcion">Descripción*:</label>
-            </div>
-            <input
-              [autofocus]
-              formControlName="Descripcion"
-              type="text"
-              id="Descripcion"
-              name="Descripcion"
-              placeholder="Registrar descripcion"
-              required
-              [(ngModel)]="ordenIngreso.descripcion_Problema"
-            />
-          </div>
-        </div>
-        <div class="grupo-inputs">
-          <div class="bg-input">
-            <div class="bg-label">
               <label for="dbMarcaAuto">Seleccionar empleado:</label>
             </div>
             <select formControlName="Empleado" [(ngModel)]="ordenIngreso.id_Empleado_Fk.id_Empleado"  name="demo" id="#">
@@ -37,21 +20,12 @@
           </div>
           <div class="bg-input">
             <div class="bg-label">
-              <label for="dbMarcaAuto">Seleccionar auto*:</label>
+              <label for="dbMarcaAuto">Seleccionar cita*:</label>
             </div>
-            <select formControlName="Auto" [(ngModel)]="ordenIngreso.id_Auto_Fk.id_Auto"  name="demo" id="#">
+            <select formControlName="Auto" [(ngModel)]="ordenIngreso.id_Prediagnostico_Fk.id_Recepcion_Fk.id_Cita_Fk.id_Citas"  name="demo" id="#">
               <option selected="selected" value="">Seleccionar</option>
-              <option  *ngFor="let item of datosAutoslista" [value]="item.id_Auto">{{item.matricula}} | {{item.idModeloFk.idMarcaFK.marca}} | {{item.idClienteFk.razon_Social}}</option>
+              <option  *ngFor="let item of listaCitasEntrega" [value]="item.id_Citas">{{item.id_Auto_Fk.matricula}} | {{item.id_Auto_Fk.idClienteFk.razon_Social}} | {{item.fecha}} | {{item.hora}}</option>
             </select>
-          </div>
-          <div class="bg-input">
-            <div class="bg-label">
-              <label for="dbMarcaAuto">Seleccionar chofer*:</label>
-            </div>
-            <select formControlName="Chofer" [(ngModel)]="ordenIngreso.id_Chofer_Fk.id_Chofer"  name="demo" id="#">
-              <option selected="selected" value="">Seleccionar</option>
-              <option  *ngFor="let item of datosChoferlista" [value]="item.id_Chofer">{{item.nombres}} | {{item.numero_Documento}}</option>
-              </select>
           </div>
         </div>
       </div>
