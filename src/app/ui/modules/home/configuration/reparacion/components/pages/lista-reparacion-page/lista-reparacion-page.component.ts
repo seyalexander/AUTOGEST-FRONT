@@ -5,13 +5,19 @@ import { TableDatosReparacionComponent } from '../../organisms/table-datos-repar
 import { HeaderPagesConfigurationComponent } from '../../../../../../../shared/components/organisms/header-pages-configuration/header-pages-configuration.component';
 import { reparacionModel } from '../../../../../../../../domain/models/reparacion/reparacion.model';
 import { GetReparacionUseCases } from '../../../../../../../../domain/useCase/get-reparacion-use-case';
+import { RegistroDatosReparacionPageComponent } from '../registro-datos-reparacion-page/registro-datos-reparacion-page.component';
+import { GetTipoEmpleadosUseCases } from '../../../../../../../../domain/useCase/get-empleado-use-case';
 
 @Component({
     selector: 'app-lista-reparacion-page',
     templateUrl: './lista-reparacion-page.component.html',
     styleUrls: ['./lista-reparacion-page.component.css'],
     standalone: true,
-    imports: [HeaderPagesConfigurationComponent, TableDatosReparacionComponent]
+    imports: [
+      HeaderPagesConfigurationComponent,
+      TableDatosReparacionComponent,
+      RegistroDatosReparacionPageComponent
+    ]
 })
 export class ListaReparacionPageComponent {
   nombrePagina: String = 'REPARACIÓN'
@@ -19,7 +25,7 @@ export class ListaReparacionPageComponent {
   datosReparacionlista: Array <reparacionModel> = [];
   listObservers$: Array<Subscription> = [];
 
-  constructor (private _getReparacionUseCase: GetReparacionUseCases) {}
+  constructor ( private _getReparacionUseCase: GetReparacionUseCases ) {}
 
 
   ngOnInit():  void {
@@ -32,4 +38,5 @@ export class ListaReparacionPageComponent {
     this.listObservers$ = [ObservarDatosModeloAutos$]
 
   }
+
 }

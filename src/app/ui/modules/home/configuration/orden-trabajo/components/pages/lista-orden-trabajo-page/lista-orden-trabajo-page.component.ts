@@ -7,9 +7,6 @@ import { CommonModule } from '@angular/common';
 import { RegistroDatosOrdenTrabajoPageComponent } from '../registro-datos-orden-trabajo-page/registro-datos-orden-trabajo-page.component';
 import { ordenTrabajoModel } from '../../../../../../../../domain/models/orden-trabajo/orden-trabajo.model';
 import { GetOrdenTrabajoUseCases } from '../../../../../../../../domain/useCase/get-orden-trabajo-use-case';
-import { citasModel } from '../../../../../../../../domain/models/citas/citas.model';
-import { GetCitasUseCase } from '../../../../../../../../domain/useCase/get-citas-use-case';
-import { AuthService } from '../../../../../../../../infraestrcuture/driven-adapter/login/auth.service';
 
 @Component({
     selector: 'app-lista-orden-trabajo-page',

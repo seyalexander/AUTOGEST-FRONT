@@ -1,0 +1,14 @@
+<div>
+  <h2 class="text-2xl font-bold mb-4">Registrar Servicio</h2>
+  <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label for="descripcion" class="block text-sm font-medium text-gray-700">Descripción</label>
+      <input id="descripcion" type="text" formControlName="descripcion" class="mt-1 p-2 w-full border rounded-md">
+    </div>
+    <div class="mb-4">
+      <label for="precio" class="block text-sm font-medium text-gray-700">Descripción servicio</label>
+      <input id="precio" type="number" formControlName="precioServicio" class="mt-1 p-2 w-full border rounded-md">
+    </div>
+    <button type="submit" class="mt-4 w-full py-2 bg-blue-500 text-white rounded-md">Registrar Servicio</button>
+  </form>
+</div>
