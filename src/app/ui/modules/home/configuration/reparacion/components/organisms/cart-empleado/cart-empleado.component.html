@@ -1,0 +1,11 @@
+<div>
+  <h2 class="text-2xl font-bold mb-4">Carrito Empleado</h2>
+  <ul class="space-y-2">
+    <li *ngFor="let item of cartEmpleado" class="flex justify-between p-4 border rounded-md">
+      <span>{{ item.nombres }}</span>
+      <span>{{ item.apellidos }}</span>
+    </li>
+  </ul>
+  <button (click)="onCheckout()" class="hidden mt-4 w-full py-2 bg-green-500 text-white rounded-md">Guardar Empleados</button>
+</div>
+

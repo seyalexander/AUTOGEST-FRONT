@@ -22,7 +22,12 @@ import { PosComponent } from '../../organisms/pos/pos.component';
     templateUrl: './registro-datos-reparacion-page.component.html',
     styleUrls: ['./registro-datos-reparacion-page.component.css'],
     standalone: true,
-    imports: [CommonModule, ReactiveFormsModule,FormsModule, PosComponent]
+    imports: [
+      CommonModule,
+      ReactiveFormsModule,
+      FormsModule,
+      PosComponent,
+    ]
 })
 export class RegistroDatosReparacionPageComponent {
   datosReparacionlista: Array <reparacionModel> = [];

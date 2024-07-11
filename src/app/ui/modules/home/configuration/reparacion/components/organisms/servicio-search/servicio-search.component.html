@@ -1,0 +1,14 @@
+<div class="flex flex-col space-y-4">
+  <input type="text" placeholder="Buscar servicio..." class="px-4 py-2 border rounded-md" (input)="onSearch($event)">
+  <ul class="space-y-2">
+    <li *ngFor="let servicio of servicios" class="flex  gap-4 justify-between p-4 border rounded-md">
+      <input type="text" [(ngModel)]="servicio.descripcionServicio" placeholder="Ingresar descripción" class="w-full">
+      <input type="number" [(ngModel)]="servicio.precioServicio" placeholder="Cantidad" class="w-16">
+    </li>
+  </ul>
+  <div class="flex  gap-4 justify-between p-4 border rounded-md">
+    <input type="text" [(ngModel)]="nuevoServicio.descripcionServicio" placeholder="Ingresar descripción" class="w-full">
+    <input type="number" [(ngModel)]="nuevoServicio.precioServicio" placeholder="Cantidad" class="w-16 ">
+    <button (click)="addToCart()" class="px-4 py-2 bg-blue-500 text-white rounded-md">Nuevo</button>
+  </div>
+</div>

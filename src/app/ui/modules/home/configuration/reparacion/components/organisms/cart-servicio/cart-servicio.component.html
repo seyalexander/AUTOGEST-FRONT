@@ -1,0 +1,15 @@
+<div>
+  <hr>
+  <h2 class="text-2xl font-bold mb-4 mt-4">Carrito servicios</h2>
+  <ul class="space-y-2">
+    <li *ngFor="let item of cartServicios" class="flex justify-between p-4 border rounded-md">
+      <span>{{ item.descripcionServicio }}</span>
+      <span  [(ngModel)]="item.precioServicio" (ngModelChange)="updateTotal()">{{ item.precioServicio| currency  }}</span>
+    </li>
+  </ul>
+  <div class="mt-4 text-right">
+    <span class="text-xl font-bold">Total: {{ total | currency }}</span>
+  </div>
+  <button (click)="onCheckout()" class="hidden mt-4 w-full py-2 bg-green-500 text-white rounded-md">Guardar Servicio</button>
+</div>
+

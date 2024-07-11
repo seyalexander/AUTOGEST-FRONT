@@ -1,0 +1,13 @@
+<div class="flex flex-col space-y-4">
+  <input type="text" placeholder="Buscar producto..." class="px-4 py-2 border rounded-md" (input)="onSearch($event)">
+  <ul class="space-y-2">
+    @for (empleado of filteredEmpleados; track $index) {
+      <li class="flex justify-between p-4 border rounded-md">
+        <span>{{ empleado.nombres }}</span>
+        <span>{{ empleado.apellidos }}</span>
+        <button (click)="addToCart(empleado)" class="px-4 py-2 bg-blue-500 text-white rounded-md">Agregar</button>
+      </li>
+    }
+  </ul>
+</div>
+

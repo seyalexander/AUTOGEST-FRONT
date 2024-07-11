@@ -21,6 +21,7 @@ import { choferesModel } from '../../../../../../../../domain/models/choferes/ch
 import { clienteModel } from '../../../../../../../../domain/models/clientes/clientes.model';
 import { RegistrarIngresoComponent } from '../../organisms/registrar-ingreso/registrar-ingreso.component';
 import { ordenTrabajoModel } from '../../../../../../../../domain/models/orden-trabajo/orden-trabajo.model';
+import { RegistrarRecepcionComponent } from '../../organisms/registrar-recepcion/registrar-recepcion.component';
 
 @Component({
   selector: 'app-lista-recepcion-page',
@@ -31,7 +32,8 @@ import { ordenTrabajoModel } from '../../../../../../../../domain/models/orden-t
     TarjetaCitasComponent,
     TarjetaDiagnosticoComponent,
     RegistrarDiagnosticoComponent,
-    RegistrarIngresoComponent
+    RegistrarIngresoComponent,
+    RegistrarRecepcionComponent
   ],
   templateUrl: './lista-recepcion-page.component.html',
   styleUrl: './lista-recepcion-page.component.css'
@@ -70,6 +72,8 @@ export class ListaRecepcionPageComponent {
           this.loginService.currentUserIdEmpleado.subscribe({
             next: (userLoginId) => {
               this.userLoginId = userLoginId
+              console.log(this.userLoginId);
+
               if (this.userLoginId > 0 || this.userLoginId != null) {
                 this.userLoginId
               }

@@ -1,0 +1,7 @@
+.container {
+  scroll-snap-type: x mandatory;
+}
+
+.container > .flex > div {
+  scroll-snap-align: center;
+}
