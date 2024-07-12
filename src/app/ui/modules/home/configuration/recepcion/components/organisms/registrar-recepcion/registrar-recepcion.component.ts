@@ -75,7 +75,7 @@ export class RegistrarRecepcionComponent {
       next:(userLoginOn) => {
         this.userLoginOn = userLoginOn;
         if(this.userLoginOn) {
-          this.loginService.currentUserIdClient.subscribe({
+          this.loginService.currentUserIdEmpleado.subscribe({
             next: (userLoginId) => {
               this.userLoginId = userLoginId
               console.log(this.userLoginId);

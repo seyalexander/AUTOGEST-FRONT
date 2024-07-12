@@ -20,7 +20,7 @@ export class OrdenTrabajoApiService extends ordenTrabajoGateway{
   private URL = environment.api;
 
   override getAll(): Observable<ordenTrabajoModel[]> {
-    return this.httpClient.get<ordenTrabajoModel[]>(`${this.URL}/MostrarOrdenIngreso`)
+    return this.httpClient.get<ordenTrabajoModel[]>(`${this.URL}/buscarOrdenIngresoPorEstado`)
   }
 
   override newOrdenProducto(ordenes: ordenTrabajoModel): Observable<Object> {
