@@ -1,6 +1,15 @@
+<app-registro-datos-usuario-page />
 <article>
   <header>
-    <app-header-pages-configuration [nombrePagina]="nombrePagina"/>
+    <h1>{{ nombrePagina }}</h1>
+      <div class="buscar-dato">
+        <div class="input-label">
+          <label for="buscar">Buscar: </label>
+        <input  type="search" name="" id="buscar" placeholder="Ingresar datos a buscar">
+        </div>
+        <button class="btn-buscar"> <i class="uil uil-search"></i> Buscar</button>
+      </div>
+      <button  data-hs-overlay="#hs-sign-out-alert-small-window-usuarios"> <i class="uil uil-plus"></i> Nuevo</button>
   </header>
   <main>
     <div class="bg-container-body">

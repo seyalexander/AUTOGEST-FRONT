@@ -18,6 +18,11 @@ export class UsuariosApiService extends usuariosGateway {
     return this.httpClient.get<usuarioModel[]>(`${this.URL}/MostrarUsuarios`)
    }
 
+
+   override newUsuario(usuario: usuarioModel): Observable<Object> {
+     return this.httpClient.post(`${this.URL}/InsertarUsuarios`,usuario)
+   }
+
   constructor(private httpClient: HttpClient) {
     super();
   }

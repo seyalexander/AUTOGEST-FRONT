@@ -17,4 +17,7 @@ export class GetUsuariosUseCases {
     return this._usuariosGateWay.getAll();
   }
 
+  newUsuarios(usuario: usuarioModel): Observable<Object> {
+    return this._usuariosGateWay.newUsuario(usuario)
+  }
 }

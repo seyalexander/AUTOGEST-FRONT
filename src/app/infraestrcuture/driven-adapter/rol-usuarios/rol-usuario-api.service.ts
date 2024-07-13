@@ -13,16 +13,16 @@ import { environment } from '../../../../environments/environment.development';
 })
 export class RolUsuarioApiService extends rolUsuarioGateway{
 
-  override getAll(): Observable<rolUsuarioModel[]> {
-    const { data }: any = (dataRaw as any).default;
-     return of(data);
-   }
+  // override getAll(): Observable<rolUsuarioModel[]> {
+  //   const { data }: any = (dataRaw as any).default;
+  //    return of(data);
+  //  }
 
   private URL = environment.api;
 
-  // override getAll(): Observable<rolUsuarioModel[]> {
-  //   return this.httpClient.get<rolUsuarioModel[]>(`${this.URL}/MostrarMarca`)
-  // }
+  override getAll(): Observable<rolUsuarioModel[]> {
+    return this.httpClient.get<rolUsuarioModel[]>(`${this.URL}/MostrarRoles`)
+  }
 
   override newRol(productos: rolUsuarioModel): Observable<Object> {
     return this.httpClient.post(`${this.URL}/InsertarProducto`,productos)

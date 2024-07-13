@@ -19,10 +19,10 @@
 
     <tr *ngFor=" let item of dataRolUsuarios | orderListRolUsuario : optionSort.property : optionSort.order">
 
-      <td scope="row">{{item.Id_Rol_Usuario}}</td>
+      <td scope="row">{{item.id_Rol}}</td>
       <td>{{item.rol}}</td>
       <td>
-        <button (click)="getById(item.Id_Rol_Usuario)" class="btn-option-table btn-editar">
+        <button (click)="getById(item.id_Rol)" class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>
         </button>
       </td>

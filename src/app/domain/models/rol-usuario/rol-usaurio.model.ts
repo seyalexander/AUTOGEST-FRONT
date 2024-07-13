@@ -1,4 +1,4 @@
 export class rolUsuarioModel {
-  Id_Rol_Usuario: String | number = '';
+  id_Rol: String | number = '';
   rol: String = '';
 }
