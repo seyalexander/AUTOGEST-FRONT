@@ -92,8 +92,6 @@ export class RegisttroChoferesPageComponent {
     this.tipoDocumentoSubscription = this._getTipoDocumentoUseCase.getAllTipoDocumento().
       subscribe((Response: tipoDocumentosModel[]) => {
         this.datosTipoDocumentolista = Response;
-        console.log( this.datosTipoDocumentolista);
-
       })
   }
 

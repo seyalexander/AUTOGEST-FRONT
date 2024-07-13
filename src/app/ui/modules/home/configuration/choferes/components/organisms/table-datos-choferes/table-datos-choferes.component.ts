@@ -14,9 +14,12 @@ import { choferesModel } from '../../../../../../../../domain/models/choferes/ch
 })
 export class TableDatosChoferesComponent {
   @Input() dataChoferes:  Array<choferesModel> = [];
+  fechaActual: string = ''
 
   ngOnInit(): void {
-
+    const currentDate = new Date();
+    const fechaActual = currentDate.toISOString().split('T')[0];
+    this.fechaActual = fechaActual
   }
 
 
