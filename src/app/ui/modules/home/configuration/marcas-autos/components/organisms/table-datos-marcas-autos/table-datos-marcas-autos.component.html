@@ -1,36 +1,179 @@
-<table class="table table-striped table-inverse table-responsive">
-  <thead class="thead-inverse">
-    <tr>
-      <th (click)="cambiarOrden('i')">
-        <app-th-tables-icon-text
-          [nombreTh]="'N°'"
-        />
-      </th>
-      <th (click)="cambiarOrden('marca')">
-        <app-th-tables-icon-text
-          [nombreTh]="'Marca'"
-        />
-      </th>
-      <th>Editar</th>
-      <th>Eliminar</th>
-    </tr>
-  </thead>
-  <tbody>
 
-    <tr *ngFor=" let item of dataMarcaAutos | orderListMarcaAutos : optionSort.property : optionSort.order; index as i">
 
-      <td scope="row">{{i}}</td>
-      <td>{{item.marca}}</td>
-      <td>
-        <button (click)="getById(item.id_Marca)" class="btn-option-table btn-editar" >
-          <i class="uil uil-pen"></i>
-        </button>
-      </td>
-      <td>
-        <button class="btn-option-table btn-eliminar">
-          <i class="uil uil-trash"></i>
-        </button>
-      </td>
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <!-- Card -->
+  <div class="flex flex-col">
+    <div class="-m-1.5 overflow-x-auto">
+      <div class="p-1.5 min-w-full inline-block align-middle">
+        <div
+          class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-neutral-900 dark:border-neutral-700"
+        >
+          <!-- Header -->
+          <div
+            class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700"
+          >
+            <div>
+              <h2
+                class="text-xl font-semibold text-gray-800 dark:text-neutral-200"
+              >
+                Marca Autos
+              </h2>
+              <p class="text-sm text-gray-600 dark:text-neutral-400">
+                Verifique su lista de marcas de autos
+                <a
+                  class="inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500"
+                  href="#"
+                  >optimamente</a
+                >
+              </p>
+            </div>
 
-  </tbody>
-</table>
+            <div>
+              <div class="inline-flex gap-x-2">
+                <a
+                  class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+                  href="#"
+                >
+                  View all
+                </a>
+
+                <a
+                  data-hs-overlay="#hs-sign-out-alert-small-window-marcaAuto"
+                  class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                >
+                  <svg
+                    class="flex-shrink-0 size-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="M12 5v14" />
+                  </svg>
+                  Registrar
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Header -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+            @for (item of dataMarcaAutos; track $index) {
+
+            <div
+              class="flex flex-col rounded-xl p-4 md:p-6 bg-white border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700"
+            >
+              <div class="flex items-center gap-x-4">
+                <img
+                  class="rounded-full size-16"
+                  src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=900&h=900&q=80"
+                  alt="Image Description"
+                />
+                <div class="grow">
+                  <h3 class="font-medium text-gray-800 dark:text-neutral-200">
+                    {{item.marca}}
+                  </h3>
+                  <p
+                    class="text-xs uppercase text-gray-500 dark:text-neutral-500"
+                  >
+                    {{$index}}
+                  </p>
+                </div>
+              </div>
+
+              <p class="mt-3 text-gray-500 dark:text-neutral-500">
+                Fecha registro {{fechaActual}}
+              </p>
+
+              <!-- Opciones uso -->
+              <div class="mt-3 space-x-1">
+                <a
+                  data-hs-overlay="#hs-sign-out-alert-small-window-marcaAutoEdit"
+                  class="inline-flex justify-center items-center size-8 text-sm font-semibold rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:border-neutral-700 dark:hover:bg-neutral-700"
+                  (click)="getById(item.id_Marca)"
+                >
+                <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                  <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                </svg>
+                </a>
+
+              </div>
+              <!-- End Social Brands -->
+            </div>
+            <!-- End Col -->
+            }
+          </div>
+
+          <!-- Footer -->
+          <div
+            class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-neutral-700"
+          >
+            <div>
+              <p class="text-sm text-gray-600 dark:text-neutral-400">
+                <span class="font-semibold text-gray-800 dark:text-neutral-200"
+                  >15</span
+                >
+                resultados
+              </p>
+            </div>
+
+            <div>
+              <div class="inline-flex gap-x-2">
+                <button
+                  type="button"
+                  class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+                >
+                  <svg
+                    class="flex-shrink-0 size-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m15 18-6-6 6-6" />
+                  </svg>
+                  Prev
+                </button>
+
+                <button
+                  type="button"
+                  class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+                >
+                  Next
+                  <svg
+                    class="flex-shrink-0 size-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- End Footer -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Card -->
+</div>
+<!-- End Table Section -->

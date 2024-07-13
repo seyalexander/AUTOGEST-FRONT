@@ -1,35 +1,21 @@
 <article>
   <!-- MODAL PARA EDITAR -->
-  <div class="modal-update" *ngIf="showUpdate">
+
     <app-actualizar-marca-autos-page
       (cerrarComponenteUpdateEvent)="updateComponente()"
       [marcaAutos]="marcaSeleccionada"
     />
-  </div>
+
 
   <!-- MODAL PARA REGISTRAR -->
-  <div class="modal-registro" *ngIf="showRegistro">
-    <app-registro-datos-marcas-autos
-      (cerrarComponenteEvent)="mostrarComponente()"
-    />
-  </div>
 
-  <!-- HEADER DE LA PÁGINA -->
-  <header>
-    <app-header-pages-configuration
-    [nombrePagina]="nombrePagina"
-    (cerrarComponenteEvent)="mostrarComponente()"/>
-  </header>
-  <main>
-    <div class="bg-container-body">
-      <div class="container-body">
-         <!-- TABLA DE LA PÁGINA -->
-        <app-table-datos-marcas-autos
-        [dataMarcaAutos]="datosMarcaAutoslista"
-        (btnBuscarMarcaId)="editarMarca($event)"
-        (cerrarUpdateComponenteEvent)="updateComponente()"/>
-      </div>
-    </div>
-  </main>
+  <app-registro-datos-marcas-autos
+    (cerrarComponenteEvent)="mostrarComponente()"
+  />
+
+  <app-table-datos-marcas-autos
+    [dataMarcaAutos]="datosMarcaAutoslista"
+    (btnBuscarMarcaId)="editarMarca($event)"
+    (cerrarUpdateComponenteEvent)="updateComponente()"
+  />
 </article>
-

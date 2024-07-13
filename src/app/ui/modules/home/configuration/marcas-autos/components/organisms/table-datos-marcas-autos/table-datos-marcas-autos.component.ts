@@ -26,6 +26,14 @@ export class TableDatosMarcasAutosComponent {
     }
   }
 
+  fechaActual: string = ''
+  ngOnInit(): void {
+    const currentDate = new Date();
+    const fechaActual = currentDate.toISOString().split('T')[0];
+    this.fechaActual = fechaActual
+  }
+
+
   //============================================================================
   // FUNCIÓN PARA EJECUTAR UNA FUNCIÓN DEL COMPONENTE HIJO AL PADRE
   //============================================================================

@@ -1,42 +1,70 @@
-<article class="container-registrar">
-  <div class="parte-superior">
-    <h2>REGISTRAR MARCA AUTO</h2>
-    <button (click)="cerrarComponente()">
-      <i class="uil uil-x"></i>
-    </button>
-  </div>
-  <div class="parte-inferior">
-    <form (ngSubmit)="sendMarcaAuto()" [formGroup]="formularioRegistro">
-      <div class="container-grupos">
-        <div class="grupo-inputs">
-          <div class="bg-input">
-            <div class="bg-label">
-              <label for="marcaAuto">Marca*:</label>
-            </div>
+<div
+  id="hs-sign-out-alert-small-window-marcaAuto"
+  class="overflow-hidden hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto"
+>
+  <!-- Card Section -->
+  <div class="max-w-4xl px-4 py-10 sm:px-6 lg:px-8 mx-auto">
+    <!-- Card -->
+    <div class="bg-white rounded-xl shadow p-4 sm:p-7 dark:bg-neutral-800">
+      <div class="mb-8">
+        <h2 class="text-xl font-bold text-gray-800 dark:text-neutral-200">
+          REGISTRO MARCA AUTOS
+        </h2>
+        <p class="text-sm text-gray-600 dark:text-neutral-400">
+          Manage your name, password and account settings.
+        </p>
+      </div>
+
+      <form (ngSubmit)="sendMarcaAuto()" [formGroup]="formularioRegistro">
+        <!-- Grid -->
+        <div class="grid sm:grid-cols-12 gap-2 sm:gap-6">
+
+
+          <div class="sm:col-span-3">
+            <label
+              for="af-account-email"
+              class="inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200"
+            >
+              marca
+            </label>
+          </div>
+          <!-- End Col -->
+
+          <div class="sm:col-span-9">
             <input
-              [autofocus]
               formControlName="marcaAuto"
-              type="text"
-              id="marcaAuto"
-              name="marcaAuto"
-              placeholder="Registrar marca"
-              required
               [(ngModel)]="marcaAuto.marca"
+              id="af-account-email"
+              type="text"
+              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+              placeholder="Ingresar marca del auto"
             />
           </div>
+
+
+          <!-- End Col -->
         </div>
-      </div>
+        <!-- End Grid -->
 
-      <div class="opciones-form">
-        <button
-          class="btn btn-success"
-          role="button"
-          [disabled]="!formularioRegistro.valid"
-        >
-          Guardar
-        </button>
-      </div>
-    </form>
+        <div class="mt-5 flex justify-end gap-x-2">
+          <button
+            data-hs-overlay="#hs-sign-out-alert-small-window-marcaAuto"
+            type="button"
+            class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            [disabled]="!formularioRegistro.valid"
+            class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+          >
+            Registrar
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- End Card -->
   </div>
-</article>
-
+  <!-- End Card Section -->
+</div>
