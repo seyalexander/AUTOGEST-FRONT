@@ -24,6 +24,8 @@ export class CartComponent {
 
   updateTotal() {
     this.total = this.cartItems.reduce((sum, item) => sum + (item.precio * (item.cantidad || 0)), 0);
+    console.log(this.total);
+
   }
 
   onCheckout() {

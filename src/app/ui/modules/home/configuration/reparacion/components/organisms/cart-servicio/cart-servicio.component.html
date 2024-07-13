@@ -4,7 +4,7 @@
   <ul class="space-y-2">
     <li *ngFor="let item of cartServicios" class="flex justify-between p-4 border rounded-md">
       <span>{{ item.descripcionServicio }}</span>
-      <span  [(ngModel)]="item.precioServicio" (ngModelChange)="updateTotal()">{{ item.precioServicio| currency  }}</span>
+      <input type="number"  [(ngModel)]="item.precioServicio" (ngModelChange)="updateTotalServicio()" placeholder="Cantidad" class="w-10">
     </li>
   </ul>
   <div class="mt-4 text-right">

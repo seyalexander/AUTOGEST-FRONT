@@ -99,8 +99,20 @@ export class RegistroDatosUsuarioPageComponent {
 
   public sendUsuarios(): void {
     const formValue = this.usuarios
-    console.log(formValue);
+    formValue.idRolesFK.id_Rol = Number(formValue.idRolesFK.id_Rol)
 
+    if (formValue.idEmpleadoFK.id_Empleado > 0 && formValue.idEmpleadoFK.id_Empleado != null && formValue.idEmpleadoFK.id_Empleado != undefined) {
+      formValue.idEmpleadoFK.id_Empleado = Number(this.usuarios.idEmpleadoFK.id_Empleado)
+      formValue.idClienteFK.idCliente == null
+    }
+
+    if (formValue.idClienteFK.idCliente != null && formValue.idClienteFK.idCliente != undefined) {
+      formValue.idClienteFK.idCliente = Number ( this.usuarios.idClienteFK.idCliente)
+      formValue.idEmpleadoFK.id_Empleado == null
+    }
+
+
+    console.log(formValue);
     this._postUsuariosUseCase
       .newUsuarios(formValue)
       .subscribe((response: any) => {

@@ -21,13 +21,16 @@ export class CartServicioComponent {
   @Input() total1: number = 0;
   @Output() checkout = new EventEmitter<void>();
   total: number = 0;
+  multiplicador: number = 1
 
   ngOnInit() {
-    this.updateTotal();
+    this.updateTotalServicio();
   }
 
-  updateTotal() {
-    this.total = this.cartServicios.reduce((sum, item) => sum + (item.precioServicio), 0);
+  updateTotalServicio() {
+    this.total = this.cartServicios.reduce((sum, item) => sum + (item.precioServicio * Number(this.multiplicador)), 0);
+    console.log(this.total);
+
   }
 
   onCheckout() {
