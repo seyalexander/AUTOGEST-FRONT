@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { choferesModel } from '../../../../../../../../domain/models/choferes/choferes.model';
@@ -8,6 +8,8 @@ import Swal from 'sweetalert2';
 import { MensajeDatosIncorrectosComponent } from '../../../../../../../shared/components/validadores/mensaje-datos-incorrectos/mensaje-datos-incorrectos.component';
 import { GetTipoDocumentoUseCases } from '../../../../../../../../domain/useCase/get-tipo-documentos-use-case';
 import { tipoDocumentosModel } from '../../../../../../../../domain/models/tipo-documentos/tipo-documentos.model';
+import { GetClientesUseCases } from '../../../../../../../../domain/useCase/get-clientes-use-case';
+import { clienteModel } from '../../../../../../../../domain/models/clientes/clientes.model';
 
 @Component({
   selector: 'app-registtro-choferes-page',
@@ -23,6 +25,7 @@ export class RegisttroChoferesPageComponent {
   Chofer: choferesModel = new choferesModel();
   formularioRegistro: FormGroup = new FormGroup({});
   private choferesSubscription: Subscription | undefined;
+  private _getClientesUseCase = inject(GetClientesUseCases);
 
 
   constructor(
@@ -31,6 +34,7 @@ export class RegisttroChoferesPageComponent {
   ) {}
 
   ngOnInit(): void {
+    this.obtenerClientesExito()
     this.obtenerTipoDocumentosExito()
     this.formularioRegistro = new FormGroup({
       nombreChofer: new FormControl('', [
@@ -46,6 +50,9 @@ export class RegisttroChoferesPageComponent {
         Validators.required,
       ]),
       tipoDocumentoChofer: new FormControl('', [
+
+      ]),
+      clienteChofer: new FormControl('', [
 
       ]),
     });
@@ -74,7 +81,16 @@ export class RegisttroChoferesPageComponent {
     window.location.reload();
   }
 
+  datosClienteslista: Array<clienteModel> = [];
+  obtenerClientesExito(): void {
+    this.clientesSubscription = this._getClientesUseCase.getAllClientes().
+      subscribe((Response: clienteModel[]) => {
+        this.datosClienteslista = Response;
+      })
+  }
+
   datosTipoDocumentolista: Array<tipoDocumentosModel> = [];
+  private clientesSubscription: Subscription | undefined;
   private tipoDocumentoSubscription: Subscription | undefined;
   obtenerTipoDocumentosExito(): void {
     this.tipoDocumentoSubscription = this._getTipoDocumentoUseCase.getAllTipoDocumento().
@@ -91,6 +107,9 @@ export class RegisttroChoferesPageComponent {
     }
     if (this.tipoDocumentoSubscription) {
       this.tipoDocumentoSubscription.unsubscribe();
+    }
+    if (this.clientesSubscription) {
+      this.clientesSubscription.unsubscribe();
     }
   }
 }

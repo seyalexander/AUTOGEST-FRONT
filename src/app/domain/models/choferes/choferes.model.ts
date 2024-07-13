@@ -1,3 +1,4 @@
+import { clienteModel } from "../clientes/clientes.model"
 import { tipoDocumentosModel } from "../tipo-documentos/tipo-documentos.model"
 
 export class choferesModel {
@@ -7,4 +8,5 @@ export class choferesModel {
   telefono: string = ''
   id_Chofer: number = 0
   id_Tipo_Documento_Fk: tipoDocumentosModel = {} as tipoDocumentosModel
+  idClienteFk: clienteModel = {} as clienteModel
 }
