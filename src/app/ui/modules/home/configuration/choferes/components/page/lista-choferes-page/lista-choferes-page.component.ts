@@ -9,6 +9,7 @@ import { HeaderPagesConfigurationComponent } from '../../../../../../../shared/c
 import { HeaderConfigurationComponent } from '../../../../../../../shared/components/organisms/header-configuration/header-configuration.component';
 import { choferesModel } from '../../../../../../../../domain/models/choferes/choferes.model';
 import { RegisttroChoferesPageComponent } from '../registtro-choferes-page/registtro-choferes-page.component';
+import { FooterChoferComponent } from '../../organisms/footer-chofer/footer-chofer.component';
 
 
 @Component({
@@ -21,7 +22,8 @@ import { RegisttroChoferesPageComponent } from '../registtro-choferes-page/regis
     CommonModule,
     TableDatosChoferesComponent,
     HeaderConfigurationComponent,
-    RegisttroChoferesPageComponent
+    RegisttroChoferesPageComponent,
+    FooterChoferComponent
   ],
   templateUrl: './lista-choferes-page.component.html',
   styleUrls: ['./lista-choferes-page.component.css']

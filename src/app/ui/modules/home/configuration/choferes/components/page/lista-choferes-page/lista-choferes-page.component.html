@@ -1,21 +1,7 @@
-<article>
-  <div class="modal-registro" *ngIf="showRegistro">
-    <app-registtro-choferes-page
-      (cerrarComponenteEvent)="mostrarComponente()"
-    />
-  </div>
 
-  <header>
-    <app-header-pages-configuration
-      (cerrarComponenteEvent)="mostrarComponente()"
-      [nombrePagina]="nombrePagina"
-    />
-  </header>
-  <main>
-    <div class="bg-container-body">
-      <div class="container-body">
-        <app-table-datos-choferes [dataChoferes]="datosChofereslista" />
-      </div>
-    </div>
-  </main>
-</article>
+
+  <app-registtro-choferes-page (cerrarComponenteEvent)="mostrarComponente()" />
+
+  <app-table-datos-choferes [dataChoferes]="datosChofereslista" />
+
+
