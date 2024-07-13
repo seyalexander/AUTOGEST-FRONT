@@ -49,12 +49,8 @@ export class RegisttroChoferesPageComponent {
       telefonoChofer: new FormControl('', [
         Validators.required,
       ]),
-      tipoDocumentoChofer: new FormControl('', [
-
-      ]),
-      clienteChofer: new FormControl('', [
-
-      ]),
+      tipoDocumentoChofer: new FormControl('', []),
+      clienteChofer: new FormControl('', []),
     });
   }
 

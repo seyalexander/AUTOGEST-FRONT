@@ -27,6 +27,8 @@ export class ListaUsuariosPageComponent {
     const ObservarDatosClientes$ = this._getUsuariosUseCase.getAllUsuarios().
     subscribe( Response => {
         this.datosUsuarioslista = Response;
+        console.log(this.datosUsuarioslista);
+
       })
 
     this.listObservers$ = [ObservarDatosClientes$]

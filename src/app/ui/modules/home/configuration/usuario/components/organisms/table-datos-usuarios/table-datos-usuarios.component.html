@@ -13,7 +13,7 @@
       </th>
       <th >
         <app-th-tables-icon-text
-          [nombreTh]="'Contraseña'"
+          [nombreTh]="'Cliente'"
         />
       </th>
       <th >
@@ -23,12 +23,7 @@
       </th>
       <th >
         <app-th-tables-icon-text
-          [nombreTh]="'E. Nombre'"
-        />
-      </th>
-      <th >
-        <app-th-tables-icon-text
-          [nombreTh]="'E. Apellido'"
+          [nombreTh]="'Telefono'"
         />
       </th>
       <th >Editar</th>
@@ -39,12 +34,24 @@
 
     <tr *ngFor=" let item of dataUsuarios | orderListUsuario : optionSort.property : optionSort.order">
 
-      <td scope="row">{{item.Id_Usuario}}</td>
-      <td>{{item.Usuario}}</td>
-      <td>{{item.Clave}}</td>
-      <td>{{item.Id_Rol_Usuario_Fk.Descripcion_Rol}}</td>
-      <td>{{item.Id_Empleado_Fk.nombres}}</td>
-      <td>{{item.Id_Empleado_Fk.apellidos}}</td>
+      <td scope="row">{{item.id_Usuarios}}</td>
+      <td>{{item.username}}</td>
+
+      <td>
+        @if (item.idEmpleadoFK == null) {
+        {{item.idClienteFK.razon_Social}}
+        }@else {
+          {{item.idEmpleadoFK.nombres}}
+        }
+      </td>
+      <td>{{item.idRolesFK.rol}}</td>
+      <td>
+        @if (item.idEmpleadoFK == null) {
+          {{item.idClienteFK.telefono}}
+        }@else {
+          {{item.idEmpleadoFK.telefono}}
+        }
+      </td>
       <td>
         <button class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>
