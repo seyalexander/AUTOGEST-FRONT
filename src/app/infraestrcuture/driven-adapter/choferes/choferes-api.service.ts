@@ -17,6 +17,10 @@ export class ChoferesApiService extends choferesGateway{
     return this.httpClient.get<choferesModel[]>(`${this.URL}/MostrarChofer`)
   }
 
+  override newChoferes(chofer: choferesModel): Observable<Object> {
+    return this.httpClient.post(`${this.URL}/InsertarChofer`, chofer)
+  }
+
   constructor(private httpClient: HttpClient) {
     super();
   }

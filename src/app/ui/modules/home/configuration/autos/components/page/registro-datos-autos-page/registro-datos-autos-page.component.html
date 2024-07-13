@@ -41,9 +41,9 @@
             <div class="bg-label">
               <label for="dbMarcaAuto">Seleccionar cliente*:</label>
             </div>
-            <select formControlName="AutoDbC" [(ngModel)]="Auto.idClienteFk.id_Cliente"  name="demo" id="#">
+            <select formControlName="Cliente_id" [(ngModel)]="Auto.idClienteFk.idCliente"  name="demo" id="#">
               <option value=""  disabled selected>Seleccionar</option>
-              <option  *ngFor="let item of datosClienteslista" [value]="item.id_Cliente">{{item.razon_Social}} </option>
+              <option  *ngFor="let item of datosClienteslista" [value]="item.idCliente">{{item.razon_Social}} </option>
             </select>
           </div>
         </div>

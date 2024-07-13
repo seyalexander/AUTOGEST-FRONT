@@ -1,13 +1,19 @@
+
+  <app-registro-familia-producto-page/>
 <article>
-  <!-- <div class="modal-registro" *ngIf="showRegistro">
-    <app-registro-datos-marcas-autos
-      (cerrarComponenteEvent)="mostrarComponente()"
-    />
-  </div> -->
   <header>
-    <app-header-pages-configuration [nombrePagina]="nombrePagina"
-    (cerrarComponenteEvent)="mostrarComponente()"/>
+    <h1>{{ nombrePagina }}</h1>
+      <div class="buscar-dato">
+        <div class="input-label">
+          <label for="buscar">Buscar: </label>
+        <input  type="search" name="" id="buscar" placeholder="Ingresar datos a buscar">
+        </div>
+        <button class="btn-buscar"> <i class="uil uil-search"></i> Buscar</button>
+      </div>
+      <button  data-hs-overlay="#hs-as-table-collapse-productos"> <i class="uil uil-plus"></i> Nuevo</button>
   </header>
+
+
   <main>
     <div class="bg-container-body">
       <div class="container-body">

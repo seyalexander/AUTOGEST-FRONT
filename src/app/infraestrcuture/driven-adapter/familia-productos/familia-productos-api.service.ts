@@ -20,7 +20,7 @@ export class FamiliaProductosApiService extends familiaProductosGateway{
    }
 
   override newFamiliaProductos(familiaProductos: familiaProductoModel): Observable<Object> {
-    return this.httpClient.post(`${this.URL}/RegistrarFamilia`, familiaProductos)
+    return this.httpClient.post(`${this.URL}/InsertarFamilia`, familiaProductos)
   }
 
   override getById(id: number): Observable<familiaProductoModel> {

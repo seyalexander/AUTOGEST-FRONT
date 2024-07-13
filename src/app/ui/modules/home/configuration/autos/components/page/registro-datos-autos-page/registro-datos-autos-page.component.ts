@@ -63,7 +63,7 @@ export class RegistroDatosAutosPageComponent {
         Validators.minLength(2)
       ]),
       AutoDb: new FormControl('', []),
-      AutoDbC: new FormControl('', [])
+      Cliente_id: new FormControl('', [])
     });
   }
 
@@ -92,6 +92,8 @@ export class RegistroDatosAutosPageComponent {
     this.clienteSubscription = this._getClienteUseCase.getAllClientes().
       subscribe((Response: clienteModel[]) => {
         this.datosClienteslista = Response;
+        console.log( this.datosClienteslista);
+
       })
   }
 
@@ -100,8 +102,10 @@ export class RegistroDatosAutosPageComponent {
   //============================================================================
 
   public sendModeloAuto(): void {
+    const formValue = this.Auto
+    console.log(formValue);
     this._postAutoUseCase
-      .newAuto(this.Auto)
+      .newAuto(formValue)
       .subscribe((response: any) => {
         this.cerrarComponente()
         this.mensajeValidacionRegistroCorrecto(response)

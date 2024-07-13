@@ -15,4 +15,8 @@ export class GetChoferesUseCases {
     return this._choferesGateWay.getAllChoferes();
   }
 
+  newChoferes (chofer: choferesModel) : Observable <object> {
+    return this._choferesGateWay.newChoferes(chofer);
+  }
+
 }

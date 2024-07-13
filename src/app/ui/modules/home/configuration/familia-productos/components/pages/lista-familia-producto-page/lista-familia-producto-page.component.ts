@@ -8,11 +8,18 @@ import { TableDatosProductosComponent } from '../../../../productos/components/o
 import { HeaderPagesConfigurationComponent } from '../../../../../../../shared/components/organisms/header-pages-configuration/header-pages-configuration.component';
 import { familiaProductoModel } from '../../../../../../../../domain/models/familia-productos/familiaProductos.model';
 import { GetFamiliaProductosUseCases } from '../../../../../../../../domain/useCase/get-familiaProductos.use-case';
+import { RegistroFamiliaProductoPageComponent } from '../registro-familia-producto-page/registro-familia-producto-page.component';
 
 @Component({
   selector: 'app-lista-familia-producto-page',
   standalone: true,
-  imports: [CommonModule, HeaderPagesConfigurationComponent, TableDatosFamiliaProductosComponent, TableDatosProductosComponent],
+  imports: [
+    CommonModule,
+    HeaderPagesConfigurationComponent,
+    TableDatosFamiliaProductosComponent,
+     TableDatosProductosComponent,
+     RegistroFamiliaProductoPageComponent
+    ],
   templateUrl: './lista-familia-producto-page.component.html',
   styleUrls: ['./lista-familia-producto-page.component.css']
 })
@@ -31,9 +38,11 @@ export class ListaFamiliaProductoPageComponent {
     this.obtenerFamiliaProductosExito();
   }
 
-  showRegistro: boolean = false;
+  showRegistro: boolean = true;
   mostrarComponente(): void {
     this.showRegistro = !this.showRegistro;
+    console.log( "MODAL PRODUCTO: ",this.showRegistro);
+
   }
 
 
