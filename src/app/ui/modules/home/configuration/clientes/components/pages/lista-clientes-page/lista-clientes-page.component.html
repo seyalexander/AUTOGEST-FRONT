@@ -1,32 +1,12 @@
-<div class="modal-registro" *ngIf="showRegistro">
-  <app-registro-datos-clientes-page
-    (cerrarComponenteEvent)="mostrarComponente()"
-  />
-</div>
-<article>
-  <header>
-    <app-header-pages-configuration
-      (cerrarComponenteEvent)="mostrarComponente()"
-      [nombrePagina]="nombrePagina"
-    />
-  </header>
-  <main>
-    <div class="bg-container-body">
-      <div class="container-body">
-        <app-table-datos-clientes
-          [nombrePagina]="nombrePagina"
-          [pParemetro]="p"
-          [cantidadPaginas]="cantDatosPorPagina"
-          [dataClientes]="datosClienteslista"
-          [isLoading]="isLoading"
-          (exportarPdfEvent)="clienteSeleccionado($event)"
-        />
-      </div>
-    </div>
+<app-registro-datos-clientes-page
+  (cerrarComponenteEvent)="mostrarComponente()"
+/>
 
-    <!-- <div class="paginacion">
-      <pagination-controls (pageChange)="p = $event" />
-    </div> -->
-  </main>
-</article>
-
+<app-table-datos-clientes
+  [nombrePagina]="nombrePagina"
+  [pParemetro]="p"
+  [cantidadPaginas]="cantDatosPorPagina"
+  [dataClientes]="datosClienteslista"
+  [isLoading]="isLoading"
+  (exportarPdfEvent)="clienteSeleccionado($event)"
+/>
