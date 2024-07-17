@@ -13,7 +13,7 @@ import { tipoDocumentosModel } from '../../../../../../../../domain/models/tipo-
     imports: [ThTablesIconTextComponent, NgFor, OrderListTipoDocumentoPipe]
 })
 export class TablaDatosTipoDocumentosComponent {
-  @Input() dataTipoDocumento:  Array<tipoDocumentosModel> = [];
+  @Input() dataTipoDocumento:  tipoDocumentosModel = {} as tipoDocumentosModel;
 
   optionSort: {property:string|null, order:string} = {property:null, order: 'asc'}
 

@@ -1,26 +1,7 @@
 
   <app-registro-familia-producto-page/>
-<article>
-  <header>
-    <h1>{{ nombrePagina }}</h1>
-      <div class="buscar-dato">
-        <div class="input-label">
-          <label for="buscar">Buscar: </label>
-        <input  type="search" name="" id="buscar" placeholder="Ingresar datos a buscar">
-        </div>
-        <button class="btn-buscar"> <i class="uil uil-search"></i> Buscar</button>
-      </div>
-      <button  data-hs-overlay="#hs-as-table-collapse-productos"> <i class="uil uil-plus"></i> Nuevo</button>
-  </header>
 
+  <app-table-datos-familia-productos [dataFamiliaProductos]="datosFamiliaProductoslista" />
 
-  <main>
-    <div class="bg-container-body">
-      <div class="container-body">
-        <app-table-datos-familia-productos [dataFamiliaProductos]="datosFamiliaProductoslista" />
-      </div>
-    </div>
-  </main>
-</article>
 
 

@@ -6,10 +6,11 @@ import { TableDatosChoferesComponent } from '../../organisms/table-datos-chofere
 import { TableDatosClientesComponent } from '../../../../clientes/components/organisms/table-datos-clientes/table-datos-clientes.component';
 import { RegistroDatosClientesPageComponent } from '../../../../clientes/components/pages/registro-datos-clientes-page/RegistroDatosClientesPageComponent';
 import { HeaderPagesConfigurationComponent } from '../../../../../../../shared/components/organisms/header-pages-configuration/header-pages-configuration.component';
-import { HeaderConfigurationComponent } from '../../../../../../../shared/components/organisms/header-configuration/header-configuration.component';
 import { choferesModel } from '../../../../../../../../domain/models/choferes/choferes.model';
 import { RegisttroChoferesPageComponent } from '../registtro-choferes-page/registtro-choferes-page.component';
 import { FooterChoferComponent } from '../../organisms/footer-chofer/footer-chofer.component';
+import { TableDatosChoferes2Component } from '../../organisms/table-datos-choferes-2/table-datos-choferes-2.component';
+import { clienteModel } from '../../../../../../../../domain/models/clientes/clientes.model';
 
 
 @Component({
@@ -21,9 +22,9 @@ import { FooterChoferComponent } from '../../organisms/footer-chofer/footer-chof
     TableDatosClientesComponent,
     CommonModule,
     TableDatosChoferesComponent,
-    HeaderConfigurationComponent,
     RegisttroChoferesPageComponent,
-    FooterChoferComponent
+    FooterChoferComponent,
+    TableDatosChoferes2Component
   ],
   templateUrl: './lista-choferes-page.component.html',
   styleUrls: ['./lista-choferes-page.component.css']
@@ -37,6 +38,10 @@ export class ListaChoferesPageComponent {
   cantDatosPorPagina: number = 7;
   mensajeServidor: String = '';
 
+  cambiarVista: boolean = true;
+  cambiarVistaTable():void {
+    this.cambiarVista = !this.cambiarVista
+  }
 
   private _getChoferesUseCase = inject(GetChoferesUseCases);
   private clientesSubscription: Subscription | undefined;
@@ -45,11 +50,14 @@ export class ListaChoferesPageComponent {
     this.obtenerClientesExito();
   }
 
+  cliente: clienteModel = {} as clienteModel;
   obtenerClientesExito(): void {
     this.isLoading = true;
     this.clientesSubscription = this._getChoferesUseCase.getAllChoferes().
       subscribe((Response: choferesModel[]) => {
-        this.datosChofereslista = Response;
+        this.datosChofereslista = Response
+        console.log(Response);
+
         this.isLoading = false;
       })
   }

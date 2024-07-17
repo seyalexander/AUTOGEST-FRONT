@@ -1,41 +1,68 @@
-<article class="container-registrar">
-  <div class="parte-superior">
-    <h2>REGISTRAR T. DOCUMENTO</h2>
-    <button (click)="cerrarComponente()">
-      <i class="uil uil-x"></i>
-    </button>
-  </div>
-  <div class="parte-inferior">
+<div
+  id="hs-sign-out-alert-small-window-tipoDocumento"
+  class="overflow-hidden hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto"
+>
+  <!-- Card Section -->
+  <div class="max-w-4xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <form (ngSubmit)="sendTipoDocumento()" [formGroup]="formularioRegistro">
-      <div class="container-grupos">
-        <div class="grupo-inputs">
-          <div class="bg-input">
-            <div class="bg-label">
-              <label for="tipoDocumento">TIPO DOCUMENTO*:</label>
+      <!-- Card -->
+      <div class="bg-white rounded-xl shadow dark:bg-neutral-900">
+        <div
+          class="relative h-40 rounded-t-xl bg-[url('https://preline.co/assets/svg/examples/abstract-bg-1.svg')] bg-no-repeat bg-cover bg-center"
+        >
+          <div class="absolute top-0 end-0 p-4"></div>
+        </div>
+
+        <div class="pt-0 p-4 sm:pt-0 sm:p-7">
+          <!-- Grid -->
+          <div class="space-y-4 sm:space-y-6">
+            <div>
+              <label class="sr-only"> Tipo Documento </label>
+
+              <div class="grid sm:flex sm:items-center sm:gap-x-5"></div>
             </div>
-            <input
-              [autofocus]
-              formControlName="tipoDocumento"
-              type="text"
-              id="tipoDocumento"
-              name="tipoDocumento"
-              placeholder="Registrar tipoDocumento"
-              required
-              [(ngModel)]="tipoDocumento.tipo"
-            />
+
+            <div class="space-y-2">
+              <label
+                for="af-submit-app-project-name"
+                class="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200"
+              >
+                Tipo documento
+              </label>
+
+              <input
+                [autofocus]
+                formControlName="tipoDocumento"
+                [(ngModel)]="tipoDocumento.tipo"
+                id="af-submit-app-project-name"
+                type="text"
+                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                placeholder="Ingrese tipo de documento"
+              />
+            </div>
+          </div>
+          <!-- End Grid -->
+
+          <div class="mt-5 flex justify-center gap-x-2">
+            <button
+            data-hs-overlay="#hs-sign-out-alert-small-window-tipoDocumento"
+            type="button"
+            class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+          >
+            Cancelar
+          </button>
+            <button
+              [disabled]="!formularioRegistro.valid"
+              type="submit"
+              class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+            >
+              Registrar
+            </button>
           </div>
         </div>
       </div>
-
-      <div class="opciones-form">
-        <button
-          class="btn btn-success"
-          role="button"
-          [disabled]="!formularioRegistro.valid"
-        >
-          Guardar
-        </button>
-      </div>
+      <!-- End Card -->
     </form>
   </div>
-</article>
+  <!-- End Card Section -->
+</div>

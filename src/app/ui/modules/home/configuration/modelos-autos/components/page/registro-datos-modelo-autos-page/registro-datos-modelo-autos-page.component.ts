@@ -69,8 +69,11 @@ export class RegistroDatosModeloAutosPageComponent {
   }
 
   public sendModeloAuto(): void {
+    const formValue = this.modeloAuto
+    console.log(formValue);
+
       this._postmodeloAutoUseCase
-      .newModeloAuto(this.modeloAuto)
+      .newModeloAuto(formValue)
       .subscribe((response: any) => {
         this.cerrarComponente()
         this.mensajeValidacionRegistroCorrecto(response)

@@ -1,29 +1,74 @@
-<article>
-  <div class="modal-update" *ngIf="showUpdate">
-    <app-actualizar-tipo-documentos
-      (cerrarComponenteUpdateEvent)="updateComponente()"
-      [tipoDocumentos]="tipoDocumentoSeleccionada"
-    />
-  </div>
-  <div class="modal-registro" *ngIf="showRegistro">
-    <app-registro-datos-tipo-documentos-page
-      (cerrarComponenteEvent)="mostrarComponente()"
-    />
-  </div>
-  <header>
-    <app-header-pages-configuration
-    [nombrePagina]="nombrePagina"
-    (cerrarComponenteEvent)="mostrarComponente()"/>
-  </header>
-  <main>
-    <div class="bg-container-body">
-      <div class="container-body">
-        <app-tabla-datos-tipo-documentos
-        [dataTipoDocumento]="datosTipoDocumentolista"
-        (cerrarUpdateComponenteEvent)="updateComponente()"
-        (btnBuscarMarcaId)="editarTipoDocumento($event)"/>
+<app-actualizar-tipo-documentos
+(cerrarComponenteUpdateEvent)="updateComponente()"
+[tipoDocumentos]="tipoDocumentoSeleccionada"
+/>
+<app-registro-datos-tipo-documentos-page/>
+
+<!-- Card Blog -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <!-- Grid -->
+  <div class="grid sm:grid-cols-2 sm:items-center gap-8">
+    <div class="sm:order-2">
+      <div class="relative pt-[50%] sm:pt-[100%] rounded-lg">
+        <img
+          class="size-full absolute top-0 start-0 object-cover rounded-lg"
+          src="https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80"
+          alt="Image Description"
+        />
       </div>
     </div>
-  </main>
-</article>
+    <!-- End Col -->
 
+    <div class="sm:order-1">
+      <p
+        class="mb-5 inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-neutral-800 dark:text-neutral-200"
+      >
+        Visualización
+      </p>
+
+      <h2
+        class="text-2xl font-bold md:text-3xl lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight text-gray-800 dark:text-neutral-200"
+      >
+        <a
+          class="hover:text-blue-600 dark:text-neutral-300 dark:hover:text-white"
+        >
+          Lista de documentos
+        </a>
+      </h2>
+
+      @for (item of datosTipoDocumentolista; track $index) {
+      <app-tabla-datos-tipo-documentos
+        [dataTipoDocumento]="item"
+        (cerrarUpdateComponenteEvent)="updateComponente()"
+        (btnBuscarMarcaId)="editarTipoDocumento($event)"
+      />
+      }
+
+      <div class="mt-5">
+        <a
+          data-hs-overlay="#hs-sign-out-alert-small-window-tipoDocumento"
+          class="cursor-pointer inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500"
+        >
+          Registrar nuevo
+          <svg
+            class="flex-shrink-0 size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <!-- End Col -->
+  </div>
+  <!-- End Grid -->
+</div>
+<!-- End Card Blog -->
