@@ -283,7 +283,7 @@
                   }
                 </td>
                 <td class="size-px whitespace-nowrap">
-                  @for (item of item.listaServicio; track $index) {
+                  @for (item of item.listaProductos; track $index) {
                     <button
                     type="button"
                     class="block"
@@ -310,7 +310,7 @@
                 </td>
                 <td class="size-px whitespace-nowrap">
                   <button
-
+                    (click)=" getById (item.id_Servicio)"
                     type="button"
                     class="block"
                     data-hs-overlay="#hs-sign-out-alert-small-window-item"
@@ -334,7 +334,7 @@
                             d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"
                           />
                         </svg>
-                        Ver detalle
+                        GENERAR PDF
                       </span>
                     </span>
                   </button>

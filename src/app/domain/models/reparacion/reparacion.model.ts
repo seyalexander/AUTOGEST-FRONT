@@ -1,3 +1,4 @@
+import { detalleProductosModel } from "../Detalle_productos_servicio/detalle_productos.mode";
 import { detalleServicioModel } from "../detalleServicio/detalle.mode";
 import { empleadoModel } from "../empleado/empleado.model";
 import { ordenTrabajoModel } from "../orden-trabajo/orden-trabajo.model";
@@ -5,9 +6,9 @@ import { productosModel } from "../productos/productos.model";
 import { listaEmpleado } from './listaEmpleado.model';
 
 export class reparacionModel {
-
   listaEmpleado: Array<listaEmpleado> = []; //nel
   listaServicio: Array<detalleServicioModel> = []; // nel
+  listaProductos: Array<detalleProductosModel> = []; // nel
   id_Servicio: number = 0; // nel
   detalle_Servicio: String = ''; // nel
   costo_Producto_Total: number = 0.0

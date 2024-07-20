@@ -138,10 +138,6 @@ export class ListaClientesPageComponent implements OnDestroy {
     window.open(doc.output('bloburl'), '_blank');
   }
 
-
-
-
-
   showRegistro: boolean = false;
   mostrarComponente(): void {
     this.showRegistro = !this.showRegistro;

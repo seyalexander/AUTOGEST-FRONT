@@ -87,11 +87,11 @@ export class HomePageComponent {
         name: ['Conf. Servicios'],
         icon: 'uil uil-document-info',
         opciones: [
-          {
-            name: ['orden trabajo'],
-            icon: 'uil uil-document-info',
-            route: ['/','home','orden-trabajo']
-          },
+          // {
+          //   name: ['orden trabajo'],
+          //   icon: 'uil uil-document-info',
+          //   route: ['/','home','orden-trabajo']
+          // },
           {
             name: ['reparacion'],
             icon: 'uil uil-document-info',
@@ -146,17 +146,17 @@ export class HomePageComponent {
         icon: 'uil uil-document-info',
         route: ['/','home','']
       },
-      {
-        name: ['Operaciones'],
-        icon: 'uil uil-document-info',
-        opciones: [
-          {
-            name: ['Orden de ingreso'],
-            icon: 'uil uil-document-info',
-            route: ['/', 'home','operacion']
-          },
-        ],
-      },
+      // {
+      //   name: ['Operaciones'],
+      //   icon: 'uil uil-document-info',
+      //   opciones: [
+      //     {
+      //       name: ['Orden de ingreso'],
+      //       icon: 'uil uil-document-info',
+      //       route: ['/', 'home','operacion']
+      //     },
+      //   ],
+      // },
     ]
 
   }

@@ -1,4 +1,7 @@
 
 <app-registro-datos-reparacion-page />
 
-<app-table-datos-reparacion [dataReparacion]="datosReparacionlista"/>
+<app-table-datos-reparacion
+[dataReparacion]="datosReparacionlista"
+(btnBuscarMarcaId)="clienteSeleccionado($event)"
+/>

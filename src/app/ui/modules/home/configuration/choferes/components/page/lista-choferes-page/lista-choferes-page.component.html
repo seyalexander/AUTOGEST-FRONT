@@ -1,5 +1,4 @@
-<app-registtro-choferes-page (cerrarComponenteEvent)="mostrarComponente()" />
-
+<app-registtro-choferes-page />
 <!-- Table Section -->
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
   <!-- Card -->
@@ -31,8 +30,17 @@
 
             <div>
               <div class="inline-flex gap-x-2">
+                @if(sinConexion == true) {
+                  <a
+                  (click)="refrescar()"
+                  class="cursor-pointer py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+                >
+                  Reintentar
+                </a>
+                }
+
                 <a
-                (click)="cambiarVistaTable()"
+                  (click)="cambiarVistaTable()"
                   class="cursor-pointer py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
                 >
                   Cambiar vista
@@ -62,15 +70,37 @@
               </div>
             </div>
           </div>
-          @if (cambiarVista ==  false) {
+          <!-- @if (cambiarVista == false) {
+
+              <div class="flex animate-pulse m-4">
+                <div class="flex-shrink-0">
+                  <span class="size-12 block bg-gray-200 rounded-full dark:bg-neutral-700"></span>
+                </div>
+
+                <div class="ms-4 mt-2 w-full">
+                  <p class="h-4 bg-gray-200 rounded-full dark:bg-neutral-700" style="width: 40%;"></p>
+
+                  <ul class="mt-5 space-y-3">
+                    <li class="w-full h-4 bg-gray-200 rounded-full dark:bg-neutral-700"></li>
+                    <li class="w-full h-4 bg-gray-200 rounded-full dark:bg-neutral-700"></li>
+                    <li class="w-full h-4 bg-gray-200 rounded-full dark:bg-neutral-700"></li>
+                    <li class="w-full h-4 bg-gray-200 rounded-full dark:bg-neutral-700"></li>
+                  </ul>
+                </div>
+              </div>
+          } -->
+          @if (cambiarVista == false) {
             <app-table-datos-choferes-2
             [dataChoferes]="datosChofereslista"
-            />
-          }@else {
-            <app-table-datos-choferes [dataChoferes]="datosChofereslista" />
+             />
           }
 
-
+          @if (cambiarVista == true) {
+          <app-table-datos-choferes
+          [dataChoferes]="datosChofereslista"
+          [isLoading]="isLoading"
+          [isNotConexion]="sinConexion" />
+          }
         </div>
       </div>
     </div>

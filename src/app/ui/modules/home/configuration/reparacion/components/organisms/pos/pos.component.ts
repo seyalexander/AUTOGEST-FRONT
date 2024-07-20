@@ -18,6 +18,13 @@ import { GetReparacionUseCases } from '../../../../../../../../domain/useCase/ge
 import Swal from 'sweetalert2';
 import { AuthService } from '../../../../../../../../infraestrcuture/driven-adapter/login/auth.service';
 import { Subscription } from 'rxjs';
+import { GetDetalleEmpleadosUseCases } from '../../../../../../../../domain/useCase/get-detalleEmpleado-use-case';
+import { Detalle_Empleado_ServicioModel } from '../../../../../../../../domain/models/Detalle_Empleado_Servici/Detalle_Empleado_Servicio.model';
+import { GetDetalleProductosUseCases } from '../../../../../../../../domain/useCase/get-detalleProductos-use-case';
+import { detalleProductosModel } from '../../../../../../../../domain/models/Detalle_productos_servicio/detalle_productos.mode';
+import { detalleServicioModel } from '../../../../../../../../domain/models/detalleServicio/detalle.mode';
+import { GetDetalleServiciosUseCases } from '../../../../../../../../domain/useCase/get-detalleServicios-use-case';
+import { detalleServiciosReparacionModel } from '../../../../../../../../domain/models/Detalle_servicios_Servicio/detalle_servicio_servicio.model';
 
 interface servicioModel {
   idServicio?: number
@@ -54,6 +61,9 @@ export class PosComponent {
   constructor(
     private _postReparacon: GetReparacionUseCases,
     private loginService: AuthService,
+    private _getDetalleReparacionUseCase: GetDetalleEmpleadosUseCases,
+    private _getDetalleProductoReparacionUseCase: GetDetalleProductosUseCases,
+    private _getDetalleServiciosReparacionUseCase: GetDetalleServiciosUseCases
   ){}
 
   // =================================================================
@@ -177,10 +187,68 @@ export class PosComponent {
     this._postReparacon
     .newReparacion(formValue)
     .subscribe((response: any) => {
+      console.log(response);
 
       this.mensajeValidacionRegistroCorrecto(response)
+      console.log(response);
+
+      this.cartEmpleados.forEach((empleados: empleadoModel)=>{
+        this.sendDetalleReparacionEmpleados(empleados.id_Empleado, 7)
+      })
+
+      this.cartItems.forEach((productos: productosModel)=>{
+        this.sendDetalleReparacionProductos(productos.id_Producto, 7, productos.cantidad, productos.precio)
+      })
+
+      this.cartServicios.forEach((servicios: servicioModel)=>{
+        this.sendDetalleReparacionServicios(servicios.descripcionServicio, 7, servicios.precioServicio)
+      })
     })
   }
+
+  detalleEmpleado: Detalle_Empleado_ServicioModel = new Detalle_Empleado_ServicioModel();
+  public sendDetalleReparacionEmpleados(IdEmpleado: number, idServicio: number) {
+    const formValue = this.detalleEmpleado
+    formValue.id_Empleado_Fk.id_Empleado = IdEmpleado
+    formValue.servicioRealizado.id_Servicio = idServicio
+    console.log(formValue);
+    this._getDetalleReparacionUseCase
+    .newDetalleEmpleado(formValue)
+    .subscribe((response: any) => {
+      console.log(response);
+    })
+  }
+
+  detalleProductos: detalleProductosModel = new detalleProductosModel();
+  public sendDetalleReparacionProductos(idProducto: number, idServicio: number, cantidad: number, precio: number) {
+    const formValue = this.detalleProductos
+    formValue.id_Producto_Fk.id_Producto = idProducto
+    formValue.servicioRealizado.id_Servicio = idServicio
+    formValue.cantidad = cantidad
+    formValue.precio_Producto = precio
+    console.log(formValue);
+    this._getDetalleProductoReparacionUseCase
+    .newDetalleProductos(formValue)
+    .subscribe((response: any) => {
+      console.log(response);
+    })
+  }
+
+  detalleServicio: detalleServiciosReparacionModel = new detalleServiciosReparacionModel();
+  public sendDetalleReparacionServicios(servicio: string, idServicio: number, precio: number) {
+    const formValue = this.detalleServicio
+    formValue.detalle_Servicio = servicio
+    formValue.servicioRealizado.id_Servicio = idServicio
+    formValue.precio_Servicio = precio
+
+    console.log(formValue);
+    this._getDetalleServiciosReparacionUseCase
+    .newDetalleServicios(formValue)
+    .subscribe((response: any) => {
+      console.log(response);
+    })
+  }
+
 
   //============================================================================
   // SWEETALERT

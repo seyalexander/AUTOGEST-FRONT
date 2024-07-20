@@ -28,7 +28,7 @@ export class ReparacionApiService extends reparacionGateway {
   }
 
   override getById(id: number): Observable<reparacionModel> {
-    return this.httpClient.get<reparacionModel>(`${this.URL}/MostrarDetalleSericio/${id}`)
+    return this.httpClient.get<reparacionModel>(`${this.URL}/MostrarServicioRealizadoPorId/${id}`)
   }
 
   override updateReparacion(id_Reparacion: number, reparacion: reparacionModel): Observable<Object> {

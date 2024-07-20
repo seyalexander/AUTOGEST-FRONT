@@ -37,6 +37,12 @@ import { recepcionGateway } from './domain/models/recepcion/gateway/recepcion-ga
 import { RecepcionApiService } from './infraestrcuture/driven-adapter/recepcion/recepcion-api.service';
 import { prediagnosticoGateway } from './domain/models/preDiagnostico/gateway/prediagnostico-gateway';
 import { PrediagnosticoApiService } from './infraestrcuture/driven-adapter/prediagnostico/prediagnostico-api.service';
+import { detalleEmpleadoGateway } from './domain/models/Detalle_Empleado_Servici/gateway/Detalle_Empleado_Servicio-gateway';
+import { DetalleServicioService } from './infraestrcuture/driven-adapter/detalleEmpleado/detalle-servicio.service';
+import { detalleProductosGateway } from './domain/models/Detalle_productos_servicio/gateway/Detalle_productos_servicio.model';
+import { DetalleProductoService } from './infraestrcuture/driven-adapter/detalleProductos/detalle-producto.service';
+import { detalleServiciosReparacionGateway } from './domain/models/Detalle_servicios_Servicio/gateway/Detalle_servicio_servicios_gateway';
+import { DetalleServiciosService } from './infraestrcuture/driven-adapter/detalleServicios/detalle-servicios.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
@@ -56,6 +62,9 @@ export const appConfig: ApplicationConfig = {
     { provide: citasGateway, useClass: CitasApiService },
     { provide: recepcionGateway, useClass: RecepcionApiService },
     { provide: prediagnosticoGateway, useClass: PrediagnosticoApiService},
+    { provide: detalleEmpleadoGateway, useClass: DetalleServicioService},
+    { provide: detalleProductosGateway, useClass: DetalleProductoService},
+    { provide: detalleServiciosReparacionGateway, useClass: DetalleServiciosService},
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     {provide:HTTP_INTERCEPTORS,useClass:ClienteInterceptorService,multi:true},
     {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptorService,multi:true},

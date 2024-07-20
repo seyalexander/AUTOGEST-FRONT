@@ -14,6 +14,8 @@ import { choferesModel } from '../../../../../../../../domain/models/choferes/ch
 })
 export class TableDatosChoferesComponent {
   @Input() dataChoferes:  Array<choferesModel> = [];
+  @Input() isLoading: boolean = false;
+  @Input() isNotConexion: boolean = false;
   fechaActual: string = ''
 
   ngOnInit(): void {

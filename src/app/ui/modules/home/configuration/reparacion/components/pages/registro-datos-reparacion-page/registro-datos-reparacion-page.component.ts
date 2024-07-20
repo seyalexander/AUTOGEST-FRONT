@@ -16,6 +16,7 @@ import { DetalleServicioModel } from '../../../../../../../../domain/models/repa
 import { Detalle_Empleado_ServicioModel } from '../../../../../../../../domain/models/Detalle_Empleado_Servici/Detalle_Empleado_Servicio.model';
 import { ProductSearchComponent } from '../../organisms/product-search/product-search.component';
 import { PosComponent } from '../../organisms/pos/pos.component';
+import { GetDetalleEmpleadosUseCases } from '../../../../../../../../domain/useCase/get-detalleEmpleado-use-case';
 
 @Component({
     selector: 'app-registro-datos-reparacion-page',
@@ -35,6 +36,7 @@ export class RegistroDatosReparacionPageComponent {
   listObservers$: Array<Subscription> = [];
 
   reparacion: reparacionModel = new reparacionModel();
+  detalleEmpleado: Detalle_Empleado_ServicioModel = new Detalle_Empleado_ServicioModel();
   detalle: Detalle_Empleado_ServicioModel = new Detalle_Empleado_ServicioModel();
   formularioRegistro: FormGroup = new FormGroup({});
 
@@ -42,7 +44,8 @@ export class RegistroDatosReparacionPageComponent {
     private _getReparacionUseCase: GetReparacionUseCases,
     private _getEmpleadosUseCase: GetTipoEmpleadosUseCases,
     private _getProductosUseCase: GetProductosUseCases,
-    private _getOrdenTrabajoUseCase: GetOrdenTrabajoUseCases
+    private _getOrdenTrabajoUseCase: GetOrdenTrabajoUseCases,
+    private _getDetalleReparacionUseCase: GetDetalleEmpleadosUseCases,
   ) {}
 
 
@@ -120,7 +123,7 @@ export class RegistroDatosReparacionPageComponent {
     // formValue.id_Prediagnostico_Fk.id_Prediagnostico = id_Prediagnostico
     // const empleadoId = this.empleadoSeleccionada.id_Empleado
     // formValue.id_Empleado_Fk.id_Empleado = empleadoId
-    // console.log(formValue);
+    console.log(formValue);
 
     this._getReparacionUseCase
       .newReparacion(formValue)
@@ -128,6 +131,15 @@ export class RegistroDatosReparacionPageComponent {
         console.log(response);
         this.mensajeValidacionRegistroCorrecto(response)
       });
+  }
+
+  public sendDetalleReparacionEmpleados() {
+    const formValue = this.detalleEmpleado
+    this._getDetalleReparacionUseCase
+    .newDetalleEmpleado(formValue)
+    .subscribe((response: any) => {
+      console.log(response);
+    })
   }
 
 

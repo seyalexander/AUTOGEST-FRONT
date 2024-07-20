@@ -1,7 +1,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, timeout } from 'rxjs';
 import { choferesGateway } from '../../../domain/models/choferes/gateway/choferes-gateway';
 import { choferesModel } from '../../../domain/models/choferes/choferes.model';
 import { environment } from '../../../../environments/environment.development';
@@ -14,7 +14,9 @@ export class ChoferesApiService extends choferesGateway{
   private URL = environment.api;
 
   override getAllChoferes(): Observable<choferesModel[]> {
-    return this.httpClient.get<choferesModel[]>(`${this.URL}/MostrarChofer`)
+    return this.httpClient.get<choferesModel[]>(`${this.URL}/MostrarChofer`).pipe(
+      timeout(3000)
+    )
   }
 
   override newChoferes(chofer: choferesModel): Observable<Object> {

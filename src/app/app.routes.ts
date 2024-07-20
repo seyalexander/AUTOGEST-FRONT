@@ -71,10 +71,10 @@ export const routes: Routes = [
         path: 'empleados',
         component: ListaEmpleadosPageComponent,
       },
-      {
-        path: 'orden-trabajo',
-        component: ListaOrdenTrabajoPageComponent,
-      },
+      // {
+      //   path: 'orden-trabajo',
+      //   component: ListaOrdenTrabajoPageComponent,
+      // },
       {
         path: 'reparacion',
         component: ListaReparacionPageComponent,
